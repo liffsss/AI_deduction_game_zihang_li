@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI推理游戏</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 加载界面 -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <h1>AI推理游戏</h1>
+                <div class="loading-spinner"></div>
+                <p>正在初始化...</p>
+            </div>
+        </div>
+
+        <!-- 游戏创建界面 -->
+        <div id="game-setup-screen" class="screen hidden">
+            <div class="setup-container">
+                <h1>创建你的推理游戏</h1>
+                <div class="setup-form">
+                    <div class="form-group">
+                        <label for="game-type">游戏类型</label>
+                        <select id="game-type">
+                            <option value="classic">经典推理</option>
+                            <option value="modern">现代悬疑</option>
+                            <option value="historical">历史谜案</option>
+                            <option value="fantasy">奇幻推理</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="game-style">风格设定</label>
+                        <select id="game-style">
+                            <option value="noir">黑色电影</option>
+                            <option value="cozy">温馨推理</option>
+                            <option value="thriller">惊悚悬疑</option>
+                            <option value="detective">侦探小说</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-prompt">自定义描述</label>
+                        <textarea id="custom-prompt"
+                                  placeholder="描述你想要的推理剧本背景、人物设定、案件类型等...&#10;例如：一个发生在豪华游轮上的密室杀人案，涉及珠宝盗窃..."></textarea>
+                    </div>
+
+                    <!-- 作家风格选择器 -->
+                    <div class="form-group">
+                        <label>作家风格 <span class="optional">(可选)</span></label>
+                        <div id="author-style-container">
+                            <!-- 作家风格选择器将在这里动态生成 -->
+                        </div>
+                    </div>
+
+                    <button id="generate-game-btn" class="primary-btn">
+                        <span class="btn-text">生成游戏</span>
+                        <span class="btn-loading hidden">生成中...</span>
+                    </button>
+
+                    <!-- 游戏生成进度条 -->
+                    <div id="generation-progress" class="generation-progress hidden">
+                        <div class="progress-header">
+                            <span id="progress-text">准备生成游戏...</span>
+                            <span id="progress-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <div id="progress-details" class="progress-details">
+                            <div class="progress-step" id="step-script">
+                                <span class="step-icon">📝</span>
+                                <span class="step-text">生成剧本</span>
+                                <span class="step-status">等待中</span>
+                            </div>
+                            <div class="progress-step" id="step-images">
+                                <span class="step-icon">🎨</span>
+                                <span class="step-text">生成图片</span>
+                                <span class="step-status">等待中</span>
+                            </div>
+                            <div class="progress-step" id="step-setup">
+                                <span class="step-icon">⚙️</span>
+                                <span class="step-text">初始化游戏</span>
+                                <span class="step-status">等待中</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏主界面 -->
+        <div id="game-main-screen" class="screen hidden">
+            <!-- 顶部信息栏 -->
+            <header class="game-header">
+                <h2 id="case-title">案件标题</h2>
+                <div class="game-progress">
+                    <span>进度: </span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 主要游戏区域 -->
+            <main class="game-content">
+                <!-- 左侧面板 -->
+                <aside class="left-panel">
+                    <!-- 案件信息 -->
+                    <section class="case-info panel">
+                        <h3>案件背景</h3>
+                        <div class="scene-image-container">
+                            <img id="crime-scene-image" src="" alt="案发现场" class="scene-image">
+                        </div>
+                        <div id="case-background" class="case-text"></div>
+                    </section>
+
+                    <!-- 人物关系图 -->
+                    <section class="relationship-panel panel">
+                        <h3>人物关系图</h3>
+                        <div id="relationship-graph"></div>
+                    </section>
+                </aside>
+
+                <!-- 中央对话区 -->
+                <section class="dialogue-area">
+                    <!-- 角色选择 -->
+                    <div class="character-selection">
+                        <h3>选择对话角色</h3>
+                        <div id="character-list" class="character-grid"></div>
+                    </div>
+
+                    <!-- 对话界面 -->
+                    <div id="conversation-panel" class="conversation hidden">
+                        <div class="conversation-header">
+                            <img id="current-character-avatar" src="" alt="角色头像" class="character-avatar">
+                            <div class="character-info">
+                                <h4 id="current-character-name">角色姓名</h4>
+                                <p id="current-character-role">角色身份</p>
+                            </div>
+                            <button id="end-conversation-btn" class="close-btn">结束对话</button>
+                        </div>
+
+                        <div id="conversation-history" class="conversation-history"></div>
+
+                        <div class="conversation-input">
+                            <input type="text" id="question-input" placeholder="输入你想问的问题...">
+                            <button id="ask-question-btn" class="send-btn">发送</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 右侧面板 -->
+                <aside class="right-panel">
+                    <!-- 线索收集 -->
+                    <section class="clues-panel panel">
+                        <h3>已发现线索</h3>
+                        <div id="clues-list" class="clues-container"></div>
+                    </section>
+
+                    <!-- 推理面板 -->
+                    <section class="reasoning-panel panel">
+                        <h3>我的推理</h3>
+                        <div class="reasoning-content">
+                            <textarea id="reasoning-notes" placeholder="记录你的推理过程..."></textarea>
+
+                            <div class="killer-selection">
+                                <label for="killer-select">选择凶手：</label>
+                                <select id="killer-select">
+                                    <option value="">请选择...</option>
+                                </select>
+                            </div>
+
+                            <button id="submit-reasoning-btn" class="primary-btn">提交推理</button>
+                        </div>
+                    </section>
+                </aside>
+            </main>
+        </div>
+
+        <!-- 结果展示界面 -->
+        <div id="game-result-screen" class="screen hidden">
+            <div class="result-container">
+                <h1 id="result-title">推理结果</h1>
+                <div id="result-content" class="result-content"></div>
+                <div class="result-actions">
+                    <button id="new-game-btn" class="primary-btn">开始新游戏</button>
+                    <button id="review-game-btn" class="secondary-btn">回顾游戏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script src="js/config.js"></script>
+    <script src="js/apis/deepseek-api.js"></script>
+    <script src="js/apis/tongyi-api.js"></script>
+    <script src="js/apis/author-style-api.js"></script>
+    <script src="js/components/relationship-graph.js"></script>
+    <script src="js/components/dialogue-system.js"></script>
+    <script src="js/components/clue-manager.js"></script>
+    <script src="js/components/author-style-selector.js"></script>
+    <script src="js/controllers/game-controller.js"></script>
+    <script src="js/controllers/ui-controller.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="dialogue-clue-fix.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

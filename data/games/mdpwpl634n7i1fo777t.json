@@ -1,0 +1,670 @@
+{
+  "id": "mdpwpl634n7i1fo777t",
+  "config": {
+    "gameType": "classic",
+    "gameStyle": "detective",
+    "customPrompt": "密室杀人"
+  },
+  "script": {
+    "title": "The Whispering Shadows",
+    "background": "In the heart of a stormy night, within the ancient walls of Blackwood Manor, a scream pierces the silence. The guests, gathered for the reading of the late Lord Blackwood's will, find themselves trapped in a deadly game of secrets and lies. The doors are locked, the windows barred, and among them, a murderer walks unseen.",
+    "location": "Blackwood Manor, a decrepit estate shrouded in fog and mystery, its halls echoing with the whispers of the past.",
+    "initialCharacters": [
+      {
+        "id": "char1",
+        "name": "Eleanor Blackwood",
+        "age": 45,
+        "role": "witness",
+        "personality": "Reserved and melancholic, with a sharp intellect hidden beneath her sorrow.",
+        "background": "The widow of Lord Blackwood, she has lived in the manor for twenty years, a prisoner of her grief.",
+        "appearance": "Pale, with dark hair streaked with silver, dressed in mourning black.",
+        "relationships": {
+          "char2": "sister-in-law",
+          "char3": "nephew"
+        },
+        "secrets": [
+          "She knew of her husband's infidelity.",
+          "She has been slowly poisoning him."
+        ],
+        "alibi": "She was in the library, alone, at the time of the murder.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      }
+    ],
+    "hiddenCharacters": [
+      {
+        "id": "char2",
+        "name": "Victoria Blackwood",
+        "age": 40,
+        "role": "suspect",
+        "personality": "Charming and manipulative, with a venomous tongue.",
+        "background": "Lord Blackwood's sister, she has always resented her brother's wealth and status.",
+        "appearance": "Strikingly beautiful, with cold blue eyes and a perpetual smirk.",
+        "relationships": {
+          "char1": "sister-in-law",
+          "char3": "nephew"
+        },
+        "secrets": [
+          "She was the one Lord Blackwood was unfaithful with.",
+          "She stands to inherit a significant portion of the estate."
+        ],
+        "alibi": "She claims to have been in her room, but no one can confirm.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "infidelity",
+          "inheritance"
+        ],
+        "discoveryHints": "Eleanor may hint at Victoria's true nature when discussing her husband's death."
+      },
+      {
+        "id": "char3",
+        "name": "Jonathan Blackwood",
+        "age": 25,
+        "role": "suspect",
+        "personality": "Brooding and intense, with a temper that flares without warning.",
+        "background": "Lord Blackwood's nephew and heir, he has always been overshadowed by his uncle's legacy.",
+        "appearance": "Tall and lean, with dark hair and piercing green eyes.",
+        "relationships": {
+          "char1": "aunt",
+          "char2": "aunt"
+        },
+        "secrets": [
+          "He has amassed significant gambling debts.",
+          "He was seen arguing with Lord Blackwood the night of the murder."
+        ],
+        "alibi": "He was supposedly walking the grounds, but the storm makes this unlikely.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "gambling",
+          "argument"
+        ],
+        "discoveryHints": "A servant may mention overhearing a heated exchange between Jonathan and the deceased."
+      },
+      {
+        "id": "char4",
+        "name": "Dr. Samuel Graves",
+        "age": 55,
+        "role": "suspect",
+        "personality": "Calm and methodical, with an unsettling detachment.",
+        "background": "The family physician, he has treated the Blackwoods for years, knowing all their ailments and secrets.",
+        "appearance": "Gaunt, with silver hair and spectacles that hide his calculating gaze.",
+        "relationships": {
+          "char1": "patient",
+          "char2": "patient",
+          "char3": "patient"
+        },
+        "secrets": [
+          "He has been stealing morphine from his own supplies.",
+          "He was the last to see Lord Blackwood alive."
+        ],
+        "alibi": "He was in his study, preparing a tonic, but the ingredients suggest otherwise.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "morphine",
+          "tonic"
+        ],
+        "discoveryHints": "A discarded bottle found in the garden may lead back to the doctor."
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue1",
+        "name": "The Poisoned Glass",
+        "description": "A crystal glass, half-filled with wine, tests positive for arsenic.",
+        "location": "Lord Blackwood's study",
+        "importance": "high",
+        "relatedCharacters": [
+          "char1",
+          "char4"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue2",
+        "name": "The Torn Letter",
+        "description": "A letter, torn in half, speaks of a 'final betrayal' and is signed 'V'.",
+        "location": "The fireplace in the drawing room",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char2"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue3",
+        "name": "The Gambling Debts",
+        "description": "A ledger detailing Jonathan's substantial debts to a notorious underworld figure.",
+        "location": "Jonathan's bedroom, hidden beneath the mattress",
+        "importance": "high",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue4",
+        "name": "The Missing Morphine",
+        "description": "The doctor's medical kit is missing several vials of morphine.",
+        "location": "Dr. Graves' study",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue5",
+        "name": "The Locked Diary",
+        "description": "Eleanor's diary, locked with a small key, contains entries about her husband's infidelity and her own despair.",
+        "location": "Eleanor's bedside table",
+        "importance": "high",
+        "relatedCharacters": [
+          "char1"
+        ],
+        "discoveredAt": null
+      }
+    ],
+    "truth": {
+      "killer": "Eleanor Blackwood",
+      "method": "Poisoning with arsenic, administered in his wine.",
+      "motive": "Revenge for his infidelity and years of emotional neglect.",
+      "timeline": "Eleanor poisoned Lord Blackwood's wine during dinner, ensuring he would retire to his study alone. She then feigned ignorance, using her alibi in the library to avoid suspicion."
+    },
+    "characters": [
+      {
+        "id": "char1",
+        "name": "Eleanor Blackwood",
+        "age": 45,
+        "role": "witness",
+        "personality": "Reserved and melancholic, with a sharp intellect hidden beneath her sorrow.",
+        "background": "The widow of Lord Blackwood, she has lived in the manor for twenty years, a prisoner of her grief.",
+        "appearance": "Pale, with dark hair streaked with silver, dressed in mourning black.",
+        "relationships": {
+          "char2": "sister-in-law",
+          "char3": "nephew"
+        },
+        "secrets": [
+          "She knew of her husband's infidelity.",
+          "She has been slowly poisoning him."
+        ],
+        "alibi": "She was in the library, alone, at the time of the murder.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "Victoria Blackwood",
+        "age": 40,
+        "role": "suspect",
+        "personality": "Charming and manipulative, with a venomous tongue.",
+        "background": "Lord Blackwood's sister, she has always resented her brother's wealth and status.",
+        "appearance": "Strikingly beautiful, with cold blue eyes and a perpetual smirk.",
+        "relationships": {
+          "char1": "sister-in-law",
+          "char3": "nephew"
+        },
+        "secrets": [
+          "She was the one Lord Blackwood was unfaithful with.",
+          "She stands to inherit a significant portion of the estate."
+        ],
+        "alibi": "She claims to have been in her room, but no one can confirm.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "infidelity",
+          "inheritance"
+        ],
+        "discoveryHints": "Eleanor may hint at Victoria's true nature when discussing her husband's death."
+      },
+      {
+        "id": "char3",
+        "name": "Jonathan Blackwood",
+        "age": 25,
+        "role": "suspect",
+        "personality": "Brooding and intense, with a temper that flares without warning.",
+        "background": "Lord Blackwood's nephew and heir, he has always been overshadowed by his uncle's legacy.",
+        "appearance": "Tall and lean, with dark hair and piercing green eyes.",
+        "relationships": {
+          "char1": "aunt",
+          "char2": "aunt"
+        },
+        "secrets": [
+          "He has amassed significant gambling debts.",
+          "He was seen arguing with Lord Blackwood the night of the murder."
+        ],
+        "alibi": "He was supposedly walking the grounds, but the storm makes this unlikely.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "gambling",
+          "argument"
+        ],
+        "discoveryHints": "A servant may mention overhearing a heated exchange between Jonathan and the deceased."
+      },
+      {
+        "id": "char4",
+        "name": "Dr. Samuel Graves",
+        "age": 55,
+        "role": "suspect",
+        "personality": "Calm and methodical, with an unsettling detachment.",
+        "background": "The family physician, he has treated the Blackwoods for years, knowing all their ailments and secrets.",
+        "appearance": "Gaunt, with silver hair and spectacles that hide his calculating gaze.",
+        "relationships": {
+          "char1": "patient",
+          "char2": "patient",
+          "char3": "patient"
+        },
+        "secrets": [
+          "He has been stealing morphine from his own supplies.",
+          "He was the last to see Lord Blackwood alive."
+        ],
+        "alibi": "He was in his study, preparing a tonic, but the ingredients suggest otherwise.",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "morphine",
+          "tonic"
+        ],
+        "discoveryHints": "A discarded bottle found in the garden may lead back to the doctor."
+      }
+    ]
+  },
+  "reasoningChain": {
+    "keyEvents": [
+      {
+        "id": "event_1",
+        "description": "Lord Blackwood is poisoned with arsenic in his wine.",
+        "timestamp": "During dinner",
+        "participants": [
+          "char1"
+        ],
+        "evidence": [
+          "clue1"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_2",
+        "description": "A scream is heard in Blackwood Manor, signaling Lord Blackwood's death.",
+        "timestamp": "Stormy night",
+        "participants": [
+          "char1",
+          "char2",
+          "char3",
+          "char4"
+        ],
+        "evidence": [],
+        "importance": "high"
+      },
+      {
+        "id": "event_3",
+        "description": "Eleanor Blackwood is in the library alone, providing her alibi.",
+        "timestamp": "Time of the murder",
+        "participants": [
+          "char1"
+        ],
+        "evidence": [],
+        "importance": "medium"
+      },
+      {
+        "id": "event_4",
+        "description": "Victoria Blackwood claims to be in her room with no confirmation.",
+        "timestamp": "Time of the murder",
+        "participants": [
+          "char2"
+        ],
+        "evidence": [
+          "clue2"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_5",
+        "description": "Jonathan Blackwood was supposedly walking the grounds during the storm.",
+        "timestamp": "Time of the murder",
+        "participants": [
+          "char3"
+        ],
+        "evidence": [
+          "clue3"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_6",
+        "description": "Dr. Samuel Graves was in his study preparing a tonic with suspicious ingredients.",
+        "timestamp": "Time of the murder",
+        "participants": [
+          "char4"
+        ],
+        "evidence": [
+          "clue4"
+        ],
+        "importance": "medium"
+      }
+    ],
+    "causalRelations": [
+      {
+        "cause": "event_1",
+        "effect": "event_2",
+        "strength": "strong",
+        "description": "Eleanor's poisoning of Lord Blackwood leads directly to his death and the subsequent scream heard in the manor."
+      },
+      {
+        "cause": "event_3",
+        "effect": "event_1",
+        "strength": "medium",
+        "description": "Eleanor's alibi in the library is part of her plan to avoid suspicion for the poisoning."
+      },
+      {
+        "cause": "event_4",
+        "effect": "event_2",
+        "strength": "weak",
+        "description": "Victoria's unconfirmed alibi raises suspicions but does not directly cause the murder."
+      },
+      {
+        "cause": "event_5",
+        "effect": "event_2",
+        "strength": "weak",
+        "description": "Jonathan's unlikely alibi during the storm raises suspicions but does not directly cause the murder."
+      },
+      {
+        "cause": "event_6",
+        "effect": "event_2",
+        "strength": "weak",
+        "description": "Dr. Graves' suspicious activities raise suspicions but do not directly cause the murder."
+      }
+    ],
+    "evidenceChain": [
+      {
+        "clueId": "clue1",
+        "connects": [
+          "char1"
+        ],
+        "significance": "Directly links Eleanor to the method of murder through the poisoned glass."
+      },
+      {
+        "clueId": "clue2",
+        "connects": [
+          "char2"
+        ],
+        "significance": "Suggests Victoria's potential motive through the torn letter mentioning betrayal."
+      },
+      {
+        "clueId": "clue3",
+        "connects": [
+          "char3"
+        ],
+        "significance": "Indicates Jonathan's financial motive through the ledger of gambling debts."
+      },
+      {
+        "clueId": "clue4",
+        "connects": [
+          "char4"
+        ],
+        "significance": "Points to Dr. Graves' suspicious behavior through the missing morphine."
+      },
+      {
+        "clueId": "clue5",
+        "connects": [
+          "char1"
+        ],
+        "significance": "Reveals Eleanor's emotional motive through her diary entries about infidelity and despair."
+      }
+    ],
+    "timeline": [
+      {
+        "time": "During dinner",
+        "event": "Lord Blackwood is poisoned.",
+        "location": "Dining room",
+        "witnesses": [
+          "char1",
+          "char2",
+          "char3",
+          "char4"
+        ]
+      },
+      {
+        "time": "After dinner",
+        "event": "Lord Blackwood retires to his study.",
+        "location": "Lord Blackwood's study",
+        "witnesses": []
+      },
+      {
+        "time": "Stormy night",
+        "event": "A scream is heard in Blackwood Manor.",
+        "location": "Blackwood Manor",
+        "witnesses": [
+          "char1",
+          "char2",
+          "char3",
+          "char4"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "crimeScene": {
+      "success": true,
+      "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/50/20250730/1412f369/8fcddaa8-2201-4c7b-977b-7459c0f3ef91-1.png?Expires=1753962550&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=2I3kdurj40%2FgZQeZMsrU9wHfeLg%3D",
+      "type": "crime_scene",
+      "description": "案发现场",
+      "prompt": "推理小说案发现场：Blackwood Manor, a decrepit estate shrouded in fog and mystery, its halls echoing with the whispers of the past.，In the heart of a stormy night, within the ancient walls of Blackwood Manor, a scream pierces the silence. The guests, gathered for the reading of the late Lord Blackwood's will, find themselves trapped in a deadly game of secrets and lies. The doors are locked, the windows barred, and among them, a murderer walks unseen.，经典侦探风格，复古氛围，专业感，悬疑氛围，电影级画质，专业摄影，高清细节",
+      "usage": {
+        "image_count": 1
+      }
+    },
+    "characters": {
+      "char1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/76/20250730/1412f369/f460a042-0c22-4e46-889a-6bbe12f88d42-1.png?Expires=1753962582&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Ul3J2L3gp3s4nt%2Fwo8RchJyDcv0%3D",
+        "type": "character_portrait",
+        "characterId": "char1",
+        "characterName": "Eleanor Blackwood",
+        "description": "Eleanor Blackwood的肖像",
+        "prompt": "人物肖像：Pale, with dark hair streaked with silver, dressed in mourning black.，45岁，Reserved and melancholic, with a sharp intellect hidden beneath her sorrow.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/08/20250730/1412f369/6ae78d11-5bfc-4a8c-8349-44b179e6c347-1.png?Expires=1753962613&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=OIWO%2FXfDGNByLCOEBYRjxaVrZ3A%3D",
+        "type": "character_portrait",
+        "characterId": "char2",
+        "characterName": "Victoria Blackwood",
+        "description": "Victoria Blackwood的肖像",
+        "prompt": "人物肖像：Strikingly beautiful, with cold blue eyes and a perpetual smirk.，40岁，Charming and manipulative, with a venomous tongue.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/fe/20250730/1412f369/32db5484-c75d-48d2-8b1d-ee8a9ee75c43-1.png?Expires=1753962644&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=DlpHeLPmmRsaYxK%2FKYn2eJm1Tbc%3D",
+        "type": "character_portrait",
+        "characterId": "char3",
+        "characterName": "Jonathan Blackwood",
+        "description": "Jonathan Blackwood的肖像",
+        "prompt": "人物肖像：Tall and lean, with dark hair and piercing green eyes.，25岁，Brooding and intense, with a temper that flares without warning.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250730/1412f369/3342be99-0c80-4d86-ab43-36ff806ea50f-1.png?Expires=1753962676&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=pHOB%2FNdqxwtgz579LBmvNuCYuD4%3D",
+        "type": "character_portrait",
+        "characterId": "char4",
+        "characterName": "Dr. Samuel Graves",
+        "description": "Dr. Samuel Graves的肖像",
+        "prompt": "人物肖像：Gaunt, with silver hair and spectacles that hide his calculating gaze.，55岁，Calm and methodical, with an unsettling detachment.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "clues": {
+      "clue1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/0b/20250730/1412f369/fb80641f-baea-451c-930f-73f97bbbe8d5-1.png?Expires=1753962708&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=9s1vf1cdWW2C4fXr3CZSzFQ1B7M%3D",
+        "type": "clue_image",
+        "clueId": "clue1",
+        "clueName": "The Poisoned Glass",
+        "description": "线索：The Poisoned Glass",
+        "prompt": "证物特写：A crystal glass, half-filled with wine, tests positive for arsenic.，推理小说道具，经典侦探风格，复古氛围，专业感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b0/20250730/1412f369/c2e4bf56-c78f-41f2-9741-ebe0be2f8136-1.png?Expires=1753962738&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=BoZuLQQyLABFcRPgxMR45E4UJZw%3D",
+        "type": "clue_image",
+        "clueId": "clue3",
+        "clueName": "The Gambling Debts",
+        "description": "线索：The Gambling Debts",
+        "prompt": "证物特写：A ledger detailing Jonathan's substantial debts to a notorious underworld figure.，推理小说道具，经典侦探风格，复古氛围，专业感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/51/20250730/1412f369/061ae6fb-eeda-472d-a68a-1b286be9c146-1.png?Expires=1753962770&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=O46RKD8XNRkQdg6WMDF2TSsVX%2FU%3D",
+        "type": "clue_image",
+        "clueId": "clue5",
+        "clueName": "The Locked Diary",
+        "description": "线索：The Locked Diary",
+        "prompt": "证物特写：Eleanor's diary, locked with a small key, contains entries about her husband's infidelity and her own despair.，推理小说道具，经典侦探风格，复古氛围，专业感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "locations": {}
+  },
+  "gameProgress": {
+    "currentPhase": "completed",
+    "discoveredClues": [
+      {
+        "id": "clue1",
+        "name": "Lord Blackwood's Will",
+        "description": "The contents of Lord Blackwood's will regarding the inheritance of the manor and estates.",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T11:59:47.465Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f4/20250730/1412f369/e5640933-c725-419c-a06c-ce9bfba86814-1.png?Expires=1753963212&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=2Ug8OmrddXD%2F62%2FUC5CoiFgX98M%3D",
+        "isNew": false
+      },
+      {
+        "id": "clue_1",
+        "name": "Conservatory Orchids",
+        "description": "Victoria claims to have been in the conservatory at the time of the incident, tending to her orchids.",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T12:01:26.748Z",
+        "isNew": false
+      }
+    ],
+    "conversationHistory": [
+      {
+        "id": "mdpwyebtwrb7t5l4va",
+        "characterId": "char1",
+        "character": "Eleanor Blackwood",
+        "question": "Victoria Blackwood inheritance",
+        "response": "Victoria's inheritance is a matter that weighs heavily on my heart. After my dear husband's passing, the manor and its estates were to be divided. However, the specifics of the will... they are not something I discuss lightly. It's a painful reminder of the past.",
+        "timestamp": "2025-07-30T11:59:47.465Z",
+        "newClues": [
+          {
+            "id": "clue1",
+            "name": "Lord Blackwood's Will",
+            "description": "The contents of Lord Blackwood's will regarding the inheritance of the manor and estates.",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T11:59:47.465Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f4/20250730/1412f369/e5640933-c725-419c-a06c-ce9bfba86814-1.png?Expires=1753963212&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=2Ug8OmrddXD%2F62%2FUC5CoiFgX98M%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "Victoria Blackwood",
+            "context": "Inheritance matters",
+            "relationship": "sister-in-law",
+            "hint": "Victoria may have had expectations or knowledge about the will that others were not aware of."
+          }
+        ]
+      },
+      {
+        "id": "mdpx0ixovrd173i3mj",
+        "characterId": "char2",
+        "character": "Victoria Blackwood",
+        "question": "你好你在死者死的时候在干嘛",
+        "response": "Oh, darling, such a direct question. At the time of that... unfortunate incident, I was in the conservatory, tending to my orchids. They require such delicate care, much like the fragile threads of our family's relationships. But why do you ask? Surely, you don't suspect little old me?",
+        "timestamp": "2025-07-30T12:01:26.748Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "Conservatory Orchids",
+            "description": "Victoria claims to have been in the conservatory at the time of the incident, tending to her orchids.",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T12:01:26.748Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "Lord Blackwood",
+            "context": "Victoria's brother, the deceased.",
+            "relationship": "sister",
+            "hint": "Victoria's relationship with her brother was complicated, to say the least."
+          }
+        ]
+      }
+    ],
+    "suspicionLevels": {
+      "char1": 0,
+      "char2": 5,
+      "char3": 0,
+      "char4": 0
+    },
+    "availableCharacters": [
+      "char1",
+      "char2"
+    ],
+    "discoveredCharacters": [
+      {
+        "characterId": "char2",
+        "discoveredAt": "2025-07-30T12:00:18.270Z",
+        "discoveredThrough": "Inheritance matters",
+        "mentionedBy": "sister-in-law"
+      }
+    ],
+    "startTime": "2025-07-30T11:52:56.427Z",
+    "reasoning": {
+      "reasoning": "哈哈哈",
+      "killer": "Victoria Blackwood",
+      "submittedAt": "2025-07-30T12:05:03.351Z"
+    },
+    "validation": {
+      "correct": false,
+      "accuracy": 0,
+      "feedback": "The user's reasoning does not align with the case truth. The user identified Victoria Blackwood as the killer without providing a logical reasoning process or linking the provided clues to the conclusion. The actual killer is Eleanor Blackwood, who poisoned Lord Blackwood with arsenic in his wine out of revenge for infidelity and emotional neglect.",
+      "suggestions": [
+        "Review all available clues carefully to understand their relevance to the case.",
+        "Develop a logical reasoning process that connects the clues to the conclusion about the killer's identity."
+      ],
+      "score": 0,
+      "correctKiller": "Eleanor Blackwood",
+      "analysis": {
+        "factAccuracy": 0,
+        "logicCompleteness": 0,
+        "evidenceStrength": 0
+      }
+    },
+    "endTime": "2025-07-30T12:05:16.024Z"
+  },
+  "createdAt": "2025-07-30T11:52:56.427Z",
+  "updatedAt": "2025-07-30T12:05:16.026Z"
+}

@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Arthur Conan Doyle",
+    "chineseName": "阿瑟·柯南·道尔",
+    "nationality": "英国",
+    "era": "19世纪末-20世纪初",
+    "style": {
+      "genre": ["推理小说", "侦探小说"],
+      "characteristics": "逻辑严密，注重细节观察，善用演绎推理法。文笔简洁明快，情节紧凑，悬念迭起。",
+      "themes": ["犯罪推理", "科学侦探", "社会正义", "人性善恶"],
+      "narrativeStyle": "第一人称叙述（华生视角），客观冷静，条理清晰",
+      "languageFeatures": ["简洁明了", "逻辑性强", "细节丰富", "对话生动"]
+    },
+    "plotStructure": {
+      "openingStyle": "案件发生或委托人求助，迅速引入核心冲突",
+      "conflictTypes": ["智力对抗", "道德冲突", "社会矛盾"],
+      "endingStyle": "真相大白，逻辑推理过程详细展示",
+      "pacing": "紧凑有序，层层递进，高潮迭起"
+    },
+    "characterization": {
+      "characterTypes": ["天才侦探", "忠实助手", "狡猾罪犯", "无辜受害者"],
+      "dialogueStyle": "简洁有力，富有个性，体现人物智慧",
+      "psychologicalDepth": "通过行为和对话展现人物内心，注重逻辑思维过程"
+    },
+    "settingDescription": {
+      "preferredSettings": ["维多利亚时代伦敦", "雾气弥漫的街道", "古老庄园"],
+      "descriptiveStyle": "简洁而富有氛围感，突出环境对案件的影响",
+      "atmosphereCreation": "营造神秘、紧张的氛围，善用雾气、夜晚等元素"
+    },
+    "representativeWorks": ["福尔摩斯探案集", "四签名", "巴斯克维尔的猎犬"],
+    "suitableFor": ["经典推理", "逻辑解谜", "侦探故事", "智力挑战"]
+  },
+  {
+    "name": "Agatha Christie",
+    "chineseName": "阿加莎·克里斯蒂",
+    "nationality": "英国",
+    "era": "20世纪",
+    "style": {
+      "genre": ["推理小说", "密室推理", "本格推理"],
+      "characteristics": "情节设计巧妙，善于设置红鲱鱼，结局出人意料。人物刻画生动，心理描写细腻。",
+      "themes": ["人性复杂", "道德审判", "社会阶层", "家庭秘密"],
+      "narrativeStyle": "第三人称全知视角，多线索并行发展",
+      "languageFeatures": ["优雅流畅", "心理描写细腻", "对话真实", "悬念营造"]
+    },
+    "plotStructure": {
+      "openingStyle": "平静的日常生活被突发事件打破",
+      "conflictTypes": ["密室谜题", "人际关系", "道德选择"],
+      "endingStyle": "侦探召集所有人，逐一分析，最后揭示真相",
+      "pacing": "稳步推进，中段加速，结尾爆发"
+    },
+    "characterization": {
+      "characterTypes": ["睿智侦探", "复杂嫌疑人", "隐藏秘密的普通人"],
+      "dialogueStyle": "符合人物身份，暗含线索，富有英式幽默",
+      "psychologicalDepth": "深入挖掘人物动机，展现人性的多面性"
+    },
+    "settingDescription": {
+      "preferredSettings": ["乡村庄园", "豪华列车", "孤岛别墅", "小镇社区"],
+      "descriptiveStyle": "详细而不冗长，营造封闭环境的压抑感",
+      "atmosphereCreation": "善用封闭空间制造紧张感，突出人物间的微妙关系"
+    },
+    "representativeWorks": ["东方快车谋杀案", "尼罗河上的惨案", "无人生还"],
+    "suitableFor": ["密室推理", "心理悬疑", "多人物群戏", "经典本格"]
+  },
+  {
+    "name": "Edgar Allan Poe",
+    "chineseName": "埃德加·爱伦·坡",
+    "nationality": "美国",
+    "era": "19世纪中期",
+    "style": {
+      "genre": ["哥特小说", "推理小说", "恐怖小说"],
+      "characteristics": "气氛阴郁神秘，心理描写深刻，善于营造恐怖悬疑氛围。文笔华丽，富有诗意。",
+      "themes": ["死亡", "疯狂", "罪恶", "超自然", "心理恐惧"],
+      "narrativeStyle": "第一人称叙述，主观色彩浓厚，心理活动丰富",
+      "languageFeatures": ["华丽诗意", "心理独白", "象征手法", "气氛营造"]
+    },
+    "plotStructure": {
+      "openingStyle": "直接进入紧张或诡异的情境",
+      "conflictTypes": ["内心挣扎", "超自然现象", "道德沦丧"],
+      "endingStyle": "往往以悲剧或恐怖结局收场，留有余韵",
+      "pacing": "逐渐加速，营造压迫感，高潮突然爆发"
+    },
+    "characterization": {
+      "characterTypes": ["疯狂的叙述者", "神秘的受害者", "阴暗的罪犯"],
+      "dialogueStyle": "富有诗意，带有哲学思辨色彩",
+      "psychologicalDepth": "深入探索人物内心的黑暗面，展现心理变化过程"
+    },
+    "settingDescription": {
+      "preferredSettings": ["阴暗的地下室", "古老的城堡", "荒凉的墓地", "密闭的房间"],
+      "descriptiveStyle": "详细而富有象征意义，营造压抑恐怖的氛围",
+      "atmosphereCreation": "善用光影对比，营造哥特式的神秘恐怖感"
+    },
+    "representativeWorks": ["莫格街凶杀案", "黑猫", "乌鸦", "厄舍府的倒塌"],
+    "suitableFor": ["心理恐怖", "哥特悬疑", "超自然推理", "黑暗氛围"]
+  },
+  {
+    "name": "Raymond Chandler",
+    "chineseName": "雷蒙德·钱德勒",
+    "nationality": "美国",
+    "era": "20世纪中期",
+    "style": {
+      "genre": ["硬汉推理", "黑色小说", "犯罪小说"],
+      "characteristics": "文风硬朗，对话犀利，善于描绘都市阴暗面。人物性格鲜明，情节紧张刺激。",
+      "themes": ["都市犯罪", "道德沦丧", "社会腐败", "个人正义"],
+      "narrativeStyle": "第一人称叙述，主观性强，带有讽刺色彩",
+      "languageFeatures": ["简洁有力", "俚语丰富", "比喻生动", "节奏明快"]
+    },
+    "plotStructure": {
+      "openingStyle": "直接进入案件现场或接受委托",
+      "conflictTypes": ["暴力冲突", "道德选择", "权力斗争"],
+      "endingStyle": "正义得到伸张，但往往带有悲剧色彩",
+      "pacing": "快节奏，动作场面多，紧张刺激"
+    },
+    "characterization": {
+      "characterTypes": ["硬汉侦探", "蛇蝎美人", "腐败官员", "街头混混"],
+      "dialogueStyle": "简洁犀利，充满机智和讽刺",
+      "psychologicalDepth": "通过行动展现人物性格，内心独白富有哲理"
+    },
+    "settingDescription": {
+      "preferredSettings": ["洛杉矶街头", "夜总会", "汽车旅馆", "警察局"],
+      "descriptiveStyle": "写实而富有质感，突出都市的冷漠和危险",
+      "atmosphereCreation": "营造黑色电影般的氛围，善用夜晚和阴影"
+    },
+    "representativeWorks": ["大眠", "告别，我的爱人", "漫长的告别"],
+    "suitableFor": ["硬汉推理", "都市犯罪", "黑色悬疑", "动作冒险"]
+  },
+  {
+    "name": "Keigo Higashino",
+    "chineseName": "东野圭吾",
+    "nationality": "日本",
+    "era": "20世纪末-21世纪",
+    "style": {
+      "genre": ["社会派推理", "本格推理", "悬疑小说"],
+      "characteristics": "情节构思精巧，善于设置多重反转。关注社会现实，人物刻画深刻，情感描写细腻。",
+      "themes": ["人性善恶", "社会问题", "家庭关系", "道德困境"],
+      "narrativeStyle": "多视角叙述，时间线巧妙安排，悬念层层递进",
+      "languageFeatures": ["简洁明了", "情感细腻", "逻辑严密", "易于理解"]
+    },
+    "plotStructure": {
+      "openingStyle": "看似平常的日常生活，暗藏玄机",
+      "conflictTypes": ["道德冲突", "情感纠葛", "社会矛盾"],
+      "endingStyle": "真相揭示后往往令人深思，带有人文关怀",
+      "pacing": "前半部分铺垫，后半部分加速，结尾震撼"
+    },
+    "characterization": {
+      "characterTypes": ["普通人", "受害者", "复杂的罪犯", "正义的侦探"],
+      "dialogueStyle": "自然真实，符合日本人的表达习惯",
+      "psychologicalDepth": "深入挖掘人物内心世界，展现复杂的人性"
+    },
+    "settingDescription": {
+      "preferredSettings": ["现代日本都市", "学校", "家庭", "工作场所"],
+      "descriptiveStyle": "贴近现实生活，细节真实可信",
+      "atmosphereCreation": "在平凡中营造不安感，善用日常场景制造悬疑"
+    },
+    "representativeWorks": ["白夜行", "嫌疑人X的献身", "解忧杂货店"],
+    "suitableFor": ["社会推理", "情感悬疑", "现代都市", "人性探讨"]
+  }
+]

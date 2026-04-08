@@ -1,0 +1,811 @@
+{
+  "id": "mdptqefs7nc4gy6lwzh",
+  "config": {
+    "gameType": "classic",
+    "gameStyle": "noir",
+    "customPrompt": "密室杀人"
+  },
+  "script": {
+    "title": "迷雾中的庄园",
+    "background": "在一个风雨交加的夜晚，富有的古董收藏家阿尔弗雷德·温斯顿在他的庄园书房内被发现死亡，书房从内部反锁，形成完美的密室。",
+    "location": "温斯顿庄园的书房",
+    "initialCharacters": [
+      {
+        "id": "char1",
+        "name": "埃莉诺·温斯顿",
+        "age": 28,
+        "role": "witness",
+        "personality": "冷静且聪明，对家族秘密知之甚少",
+        "background": "阿尔弗雷德的侄女，刚从国外回来",
+        "appearance": "高挑，黑发，总是穿着深色衣服",
+        "relationships": {
+          "char2": "叔叔",
+          "char3": "家族律师"
+        },
+        "secrets": [
+          "她知道叔叔最近收到了一封威胁信"
+        ],
+        "alibi": "在楼上的卧室休息",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "詹姆斯·温斯顿",
+        "age": 45,
+        "role": "witness",
+        "personality": "急躁且多疑",
+        "background": "阿尔弗雷德的弟弟，家族企业的财务主管",
+        "appearance": "中等身材，开始秃顶",
+        "relationships": {
+          "char1": "侄女",
+          "char4": "女管家"
+        },
+        "secrets": [
+          "他最近有财务问题"
+        ],
+        "alibi": "在书房外与女管家交谈",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      }
+    ],
+    "hiddenCharacters": [
+      {
+        "id": "char3",
+        "name": "理查德·莫里森",
+        "age": 50,
+        "role": "suspect",
+        "personality": "狡猾且善于言辞",
+        "background": "家族律师，与阿尔弗雷德有长期合作",
+        "appearance": "高大，灰发，总是穿着三件套",
+        "relationships": {
+          "char1": "客户侄女",
+          "char2": "客户弟弟"
+        },
+        "secrets": [
+          "他正在处理一份可能改变家族财产分配的文件"
+        ],
+        "alibi": "声称在书房外等候",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "律师",
+          "文件"
+        ],
+        "discoveryHints": "埃莉诺提到叔叔最近与律师有频繁会面"
+      },
+      {
+        "id": "char4",
+        "name": "玛莎·霍普金斯",
+        "age": 60,
+        "role": "suspect",
+        "personality": "忠诚但有些神秘",
+        "background": "庄园的女管家，服务家族30年",
+        "appearance": "瘦小，银发，总是穿着制服",
+        "relationships": {
+          "char2": "雇主弟弟"
+        },
+        "secrets": [
+          "她知道阿尔弗雷德的遗嘱内容"
+        ],
+        "alibi": "在厨房准备茶点",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "女管家",
+          "遗嘱"
+        ],
+        "discoveryHints": "詹姆斯提到女管家最近行为异常"
+      },
+      {
+        "id": "char5",
+        "name": "维克多·克拉克",
+        "age": 35,
+        "role": "suspect",
+        "personality": "沉默寡言，有些阴郁",
+        "background": "阿尔弗雷德的私人医生",
+        "appearance": "瘦高，黑发，戴着眼镜",
+        "relationships": {
+          "char1": "病人侄女"
+        },
+        "secrets": [
+          "他为阿尔弗雷德提供了一种罕见的药物"
+        ],
+        "alibi": "在医务室整理药品",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "医生",
+          "药物"
+        ],
+        "discoveryHints": "埃莉诺提到叔叔最近健康状况恶化"
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue1",
+        "name": "威胁信",
+        "description": "一封未署名的信，警告阿尔弗雷德停止某项交易",
+        "location": "阿尔弗雷德的抽屉",
+        "importance": "high",
+        "relatedCharacters": [
+          "char1"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue2",
+        "name": "财务文件",
+        "description": "显示詹姆斯有大量未偿还的债务",
+        "location": "书房的书架",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char2"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue3",
+        "name": "遗嘱草案",
+        "description": "显示阿尔弗雷德计划大幅减少詹姆斯的继承份额",
+        "location": "律师的公文包",
+        "importance": "high",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue4",
+        "name": "药物瓶",
+        "description": "一种罕见且高剂量的药物，可能导致心脏骤停",
+        "location": "医务室",
+        "importance": "high",
+        "relatedCharacters": [
+          "char5"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue5",
+        "name": "钥匙",
+        "description": "书房的备用钥匙，本应由玛莎保管",
+        "location": "女管家的房间",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      }
+    ],
+    "truth": {
+      "killer": "理查德·莫里森",
+      "method": "利用药物诱导心脏骤停，制造密室假象",
+      "motive": "阻止阿尔弗雷德签署新遗嘱，保护自己的利益",
+      "timeline": "在阿尔弗雷德服药后，理查德进入书房确认死亡，然后从内部锁门离开"
+    },
+    "characters": [
+      {
+        "id": "char1",
+        "name": "埃莉诺·温斯顿",
+        "age": 28,
+        "role": "witness",
+        "personality": "冷静且聪明，对家族秘密知之甚少",
+        "background": "阿尔弗雷德的侄女，刚从国外回来",
+        "appearance": "高挑，黑发，总是穿着深色衣服",
+        "relationships": {
+          "char2": "叔叔",
+          "char3": "家族律师"
+        },
+        "secrets": [
+          "她知道叔叔最近收到了一封威胁信"
+        ],
+        "alibi": "在楼上的卧室休息",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "詹姆斯·温斯顿",
+        "age": 45,
+        "role": "witness",
+        "personality": "急躁且多疑",
+        "background": "阿尔弗雷德的弟弟，家族企业的财务主管",
+        "appearance": "中等身材，开始秃顶",
+        "relationships": {
+          "char1": "侄女",
+          "char4": "女管家"
+        },
+        "secrets": [
+          "他最近有财务问题"
+        ],
+        "alibi": "在书房外与女管家交谈",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char3",
+        "name": "理查德·莫里森",
+        "age": 50,
+        "role": "suspect",
+        "personality": "狡猾且善于言辞",
+        "background": "家族律师，与阿尔弗雷德有长期合作",
+        "appearance": "高大，灰发，总是穿着三件套",
+        "relationships": {
+          "char1": "客户侄女",
+          "char2": "客户弟弟"
+        },
+        "secrets": [
+          "他正在处理一份可能改变家族财产分配的文件"
+        ],
+        "alibi": "声称在书房外等候",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "律师",
+          "文件"
+        ],
+        "discoveryHints": "埃莉诺提到叔叔最近与律师有频繁会面"
+      },
+      {
+        "id": "char4",
+        "name": "玛莎·霍普金斯",
+        "age": 60,
+        "role": "suspect",
+        "personality": "忠诚但有些神秘",
+        "background": "庄园的女管家，服务家族30年",
+        "appearance": "瘦小，银发，总是穿着制服",
+        "relationships": {
+          "char2": "雇主弟弟"
+        },
+        "secrets": [
+          "她知道阿尔弗雷德的遗嘱内容"
+        ],
+        "alibi": "在厨房准备茶点",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "女管家",
+          "遗嘱"
+        ],
+        "discoveryHints": "詹姆斯提到女管家最近行为异常"
+      },
+      {
+        "id": "char5",
+        "name": "维克多·克拉克",
+        "age": 35,
+        "role": "suspect",
+        "personality": "沉默寡言，有些阴郁",
+        "background": "阿尔弗雷德的私人医生",
+        "appearance": "瘦高，黑发，戴着眼镜",
+        "relationships": {
+          "char1": "病人侄女"
+        },
+        "secrets": [
+          "他为阿尔弗雷德提供了一种罕见的药物"
+        ],
+        "alibi": "在医务室整理药品",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "医生",
+          "药物"
+        ],
+        "discoveryHints": "埃莉诺提到叔叔最近健康状况恶化"
+      }
+    ]
+  },
+  "reasoningChain": {
+    "keyEvents": [
+      {
+        "id": "event_1",
+        "description": "阿尔弗雷德·温斯顿在他的庄园书房内被发现死亡",
+        "timestamp": "风雨交加的夜晚",
+        "participants": [
+          "char1",
+          "char2",
+          "char3",
+          "char4",
+          "char5"
+        ],
+        "evidence": [
+          "clue1",
+          "clue2",
+          "clue3",
+          "clue4",
+          "clue5"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_2",
+        "description": "埃莉诺·温斯顿提到叔叔最近收到了一封威胁信",
+        "timestamp": "死亡前",
+        "participants": [
+          "char1"
+        ],
+        "evidence": [
+          "clue1"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_3",
+        "description": "詹姆斯·温斯顿有大量未偿还的债务",
+        "timestamp": "死亡前",
+        "participants": [
+          "char2"
+        ],
+        "evidence": [
+          "clue2"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_4",
+        "description": "阿尔弗雷德计划大幅减少詹姆斯的继承份额",
+        "timestamp": "死亡前",
+        "participants": [
+          "char3"
+        ],
+        "evidence": [
+          "clue3"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_5",
+        "description": "维克多·克拉克为阿尔弗雷德提供了一种罕见的药物",
+        "timestamp": "死亡前",
+        "participants": [
+          "char5"
+        ],
+        "evidence": [
+          "clue4"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_6",
+        "description": "玛莎·霍普金斯知道阿尔弗雷德的遗嘱内容",
+        "timestamp": "死亡前",
+        "participants": [
+          "char4"
+        ],
+        "evidence": [
+          "clue5"
+        ],
+        "importance": "medium"
+      }
+    ],
+    "causalRelations": [
+      {
+        "cause": "event_2",
+        "effect": "event_1",
+        "strength": "medium",
+        "description": "威胁信可能揭示了凶手的动机"
+      },
+      {
+        "cause": "event_3",
+        "effect": "event_1",
+        "strength": "medium",
+        "description": "詹姆斯的财务问题可能促使他采取极端措施"
+      },
+      {
+        "cause": "event_4",
+        "effect": "event_1",
+        "strength": "strong",
+        "description": "遗嘱变更直接威胁到理查德的利益，提供了明确的动机"
+      },
+      {
+        "cause": "event_5",
+        "effect": "event_1",
+        "strength": "strong",
+        "description": "罕见药物的使用是导致死亡的关键手段"
+      },
+      {
+        "cause": "event_6",
+        "effect": "event_1",
+        "strength": "weak",
+        "description": "玛莎对遗嘱的了解可能间接影响事件，但直接关联较弱"
+      }
+    ],
+    "evidenceChain": [
+      {
+        "clueId": "clue1",
+        "connects": [
+          "clue3"
+        ],
+        "significance": "威胁信和遗嘱草案共同指向理查德·莫里森的动机"
+      },
+      {
+        "clueId": "clue3",
+        "connects": [
+          "clue4"
+        ],
+        "significance": "遗嘱草案和药物瓶揭示了理查德·莫里森的作案手段"
+      },
+      {
+        "clueId": "clue5",
+        "connects": [
+          "clue1"
+        ],
+        "significance": "钥匙的存在暗示了密室的可能制造者"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "风雨交加的夜晚",
+        "event": "阿尔弗雷德·温斯顿在他的庄园书房内被发现死亡",
+        "location": "温斯顿庄园的书房",
+        "witnesses": [
+          "char1",
+          "char2"
+        ]
+      },
+      {
+        "time": "死亡前",
+        "event": "埃莉诺·温斯顿提到叔叔最近收到了一封威胁信",
+        "location": "温斯顿庄园",
+        "witnesses": [
+          "char1"
+        ]
+      },
+      {
+        "time": "死亡前",
+        "event": "詹姆斯·温斯顿有大量未偿还的债务",
+        "location": "温斯顿庄园",
+        "witnesses": [
+          "char2"
+        ]
+      },
+      {
+        "time": "死亡前",
+        "event": "阿尔弗雷德计划大幅减少詹姆斯的继承份额",
+        "location": "温斯顿庄园",
+        "witnesses": [
+          "char3"
+        ]
+      },
+      {
+        "time": "死亡前",
+        "event": "维克多·克拉克为阿尔弗雷德提供了一种罕见的药物",
+        "location": "医务室",
+        "witnesses": [
+          "char5"
+        ]
+      },
+      {
+        "time": "死亡前",
+        "event": "玛莎·霍普金斯知道阿尔弗雷德的遗嘱内容",
+        "location": "女管家的房间",
+        "witnesses": [
+          "char4"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "crimeScene": {
+      "success": true,
+      "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/63/20250730/1412f369/bd35dfb6-e571-400f-94bb-01354991ddde-1.png?Expires=1753957523&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=hwiuJrL6%2FG3zek7f%2BA%2B4ZDLGa4M%3D",
+      "type": "crime_scene",
+      "description": "案发现场",
+      "prompt": "推理小说案发现场：温斯顿庄园的书房，在一个风雨交加的夜晚，富有的古董收藏家阿尔弗雷德·温斯顿在他的庄园书房内被发现死亡，书房从内部反锁，形成完美的密室。，黑色电影风格，阴暗光线，高对比度，悬疑氛围，电影级画质，专业摄影，高清细节",
+      "usage": {
+        "image_count": 1
+      }
+    },
+    "characters": {
+      "char1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/ad/20250730/1412f369/47b827f6-1520-42ea-824d-ffa22f735e0f-1.png?Expires=1753957553&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=sOlHInESfefaKFmptWFOACYk4Cs%3D",
+        "type": "character_portrait",
+        "characterId": "char1",
+        "characterName": "埃莉诺·温斯顿",
+        "description": "埃莉诺·温斯顿的肖像",
+        "prompt": "人物肖像：高挑，黑发，总是穿着深色衣服，28岁，冷静且聪明，对家族秘密知之甚少的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/1f/20250730/1412f369/834314e4-bddb-4ed9-b3be-15aa3537d3e9-1.png?Expires=1753957584&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=aaCf%2BzRzUz%2BHbomWTlSJCcPs0%2F4%3D",
+        "type": "character_portrait",
+        "characterId": "char2",
+        "characterName": "詹姆斯·温斯顿",
+        "description": "詹姆斯·温斯顿的肖像",
+        "prompt": "人物肖像：中等身材，开始秃顶，45岁，急躁且多疑的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/39/20250730/1412f369/7dfadfa2-1671-457e-b1d8-1f29558271f6-1.png?Expires=1753957615&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=40hdK50Xi%2Fz2%2Be6IH11Eh8zUEyI%3D",
+        "type": "character_portrait",
+        "characterId": "char3",
+        "characterName": "理查德·莫里森",
+        "description": "理查德·莫里森的肖像",
+        "prompt": "人物肖像：高大，灰发，总是穿着三件套，50岁，狡猾且善于言辞的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250730/1412f369/d22281b8-1fb0-4362-a1a8-3a2d1a056f02-1.png?Expires=1753957646&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=uevD3wwr8mVK8xxWSFKb2MnTY8I%3D",
+        "type": "character_portrait",
+        "characterId": "char4",
+        "characterName": "玛莎·霍普金斯",
+        "description": "玛莎·霍普金斯的肖像",
+        "prompt": "人物肖像：瘦小，银发，总是穿着制服，60岁，忠诚但有些神秘的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/01/20250730/1412f369/ac78ebd7-5006-4ac6-affc-946adc1c7679-1.png?Expires=1753957676&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=cDR1mWm9wLkoPxLPrcqJmHDKB6o%3D",
+        "type": "character_portrait",
+        "characterId": "char5",
+        "characterName": "维克多·克拉克",
+        "description": "维克多·克拉克的肖像",
+        "prompt": "人物肖像：瘦高，黑发，戴着眼镜，35岁，沉默寡言，有些阴郁的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "clues": {
+      "clue1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/7e/20250730/1412f369/b123054a-9dc2-47bd-8f63-a9917bc42c89-1.png?Expires=1753957707&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=VIoCuKfWzcuDyaJr6ciRX4ntbbk%3D",
+        "type": "clue_image",
+        "clueId": "clue1",
+        "clueName": "威胁信",
+        "description": "线索：威胁信",
+        "prompt": "证物特写：一封未署名的信，警告阿尔弗雷德停止某项交易，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/70/20250730/1412f369/3456b949-e176-4844-8d02-5eeb1e5c080c-1.png?Expires=1753957739&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=QGgglOeH0EOqYK%2Bp3BRz9kn6Ekw%3D",
+        "type": "clue_image",
+        "clueId": "clue3",
+        "clueName": "遗嘱草案",
+        "description": "线索：遗嘱草案",
+        "prompt": "证物特写：显示阿尔弗雷德计划大幅减少詹姆斯的继承份额，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e1/20250730/1412f369/7e45f3d3-c93d-4daf-9ce5-881dab7c729e-1.png?Expires=1753957769&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0CatqF1AVL1bK2pnzB6GSL4ftLk%3D",
+        "type": "clue_image",
+        "clueId": "clue4",
+        "clueName": "药物瓶",
+        "description": "线索：药物瓶",
+        "prompt": "证物特写：一种罕见且高剂量的药物，可能导致心脏骤停，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "locations": {}
+  },
+  "gameProgress": {
+    "currentPhase": "completed",
+    "discoveredClues": [
+      {
+        "id": "clue1",
+        "name": "玛莎·霍普金斯的忠诚",
+        "description": "玛莎·霍普金斯在家族中工作多年，对家族事务非常熟悉，可能知道一些不为人知的秘密。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T10:37:31.412Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_1",
+        "name": "家族律师的角色",
+        "description": "家族律师可能掌握着遗嘱的详细信息。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T10:38:36.683Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_4",
+        "name": "理查德·布莱克伍德的律师文件",
+        "description": "理查德·布莱克伍德保管着温斯顿家族的重要文件，可能包括遗嘱和其他法律文件。",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T10:44:58.905Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/7b/20250730/1412f369/795f7ff3-bacb-4bbb-a2e9-2630dd586fda-1.png?Expires=1753958755&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=e9KZ69L0Gxswu04xPgpyz6%2FwpUM%3D",
+        "isNew": false
+      }
+    ],
+    "conversationHistory": [
+      {
+        "id": "mdpu0ln8gezuw7re4uk",
+        "characterId": "char1",
+        "character": "埃莉诺·温斯顿",
+        "question": "玛莎·霍普金斯是女管家吗",
+        "response": "是的，玛莎·霍普金斯确实是我们家的女管家。她在这里工作已经有很多年了，对家族的事务非常熟悉。",
+        "timestamp": "2025-07-30T10:37:31.412Z",
+        "newClues": [
+          {
+            "id": "clue1",
+            "name": "玛莎·霍普金斯的忠诚",
+            "description": "玛莎·霍普金斯在家族中工作多年，对家族事务非常熟悉，可能知道一些不为人知的秘密。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T10:37:31.412Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "阿尔弗雷德",
+            "context": "作为家族的成员，阿尔弗雷德与玛莎·霍普金斯有直接的工作关系。",
+            "relationship": "叔叔",
+            "hint": "阿尔弗雷德最近似乎有些心事，可能与那封威胁信有关。"
+          }
+        ]
+      },
+      {
+        "id": "mdpu200bwr9652yca6",
+        "characterId": "char1",
+        "character": "埃莉诺·温斯顿",
+        "question": "遗嘱上有玛莎·霍普金斯吗",
+        "response": "关于遗嘱的具体内容，我不太清楚。不过，我可以告诉你，家族律师可能会知道更多细节。",
+        "timestamp": "2025-07-30T10:38:36.683Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "家族律师的角色",
+            "description": "家族律师可能掌握着遗嘱的详细信息。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T10:38:36.683Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "家族律师",
+            "context": "遗嘱的详细信息",
+            "relationship": "家族的法律顾问",
+            "hint": "家族律师可能知道更多关于遗嘱的秘密。"
+          }
+        ]
+      },
+      {
+        "id": "mdpu513tv4x7xoi4nb",
+        "characterId": "char1",
+        "character": "埃莉诺·温斯顿",
+        "question": "家族律师是谁",
+        "response": "家族律师是理查德·布莱克伍德先生。他处理我们家族的法律事务已经很多年了，非常可靠。",
+        "timestamp": "2025-07-30T10:40:58.073Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "理查德·布莱克伍德",
+            "description": "家族律师，处理温斯顿家族的法律事务多年。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·布莱克伍德",
+            "context": "作为家族律师被提及",
+            "relationship": "家族律师",
+            "hint": "可能知道更多关于遗嘱和威胁信的细节"
+          }
+        ]
+      },
+      {
+        "id": "mdpua6xl1ksg9e90y6j",
+        "characterId": "char1",
+        "character": "埃莉诺·温斯顿",
+        "question": "理查德·莫里森，律师文件",
+        "response": "理查德·莫里森？我不记得家族中有这样一位律师。或许你是记错了名字？我们家族的律师是理查德·布莱克伍德先生。关于律师文件，我不便过多讨论，但布莱克伍德先生确实保管着一些重要的家族文件。",
+        "timestamp": "2025-07-30T10:44:58.905Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "理查德·布莱克伍德的律师文件",
+            "description": "理查德·布莱克伍德保管着温斯顿家族的重要文件，可能包括遗嘱和其他法律文件。",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T10:44:58.905Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/7b/20250730/1412f369/795f7ff3-bacb-4bbb-a2e9-2630dd586fda-1.png?Expires=1753958755&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=e9KZ69L0Gxswu04xPgpyz6%2FwpUM%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·布莱克伍德",
+            "context": "作为温斯顿家族的律师，保管重要文件。",
+            "relationship": "家族律师",
+            "hint": "可能知道更多关于威胁信和遗嘱的细节。"
+          }
+        ]
+      },
+      {
+        "id": "mdpuent5a3dpvm50bl9",
+        "characterId": "char1",
+        "character": "埃莉诺·温斯顿",
+        "question": "玛莎·霍普金斯是庄园的女管家吗",
+        "response": "是的，玛莎·霍普金斯确实是庄园的女管家。她在这里工作了很多年，对庄园的每一个角落都非常熟悉。",
+        "timestamp": "2025-07-30T10:48:27.401Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "玛莎·霍普金斯的忠诚",
+            "description": "玛莎·霍普金斯作为庄园的女管家，对庄园和家族有着深厚的感情和忠诚。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "玛莎·霍普金斯",
+            "context": "作为庄园的女管家",
+            "relationship": "家族雇员",
+            "hint": "她对家族的事务了解甚多，可能知道一些不为人知的秘密。"
+          },
+          {
+            "name": "阿尔弗雷德·温斯顿",
+            "context": "玛莎·霍普金斯的雇主",
+            "relationship": "叔叔",
+            "hint": "阿尔弗雷德最近收到了一封威胁信，可能与庄园的秘密有关。"
+          }
+        ]
+      }
+    ],
+    "suspicionLevels": {
+      "char1": 0,
+      "char2": 0,
+      "char3": 0,
+      "char4": 0,
+      "char5": 0
+    },
+    "availableCharacters": [
+      "char1",
+      "char2",
+      "char4"
+    ],
+    "discoveredCharacters": [
+      {
+        "characterId": "char4",
+        "discoveredAt": "2025-07-30T10:48:27.402Z",
+        "discoveredThrough": "作为庄园的女管家",
+        "mentionedBy": "家族雇员"
+      }
+    ],
+    "startTime": "2025-07-30T10:29:35.512Z",
+    "reasoning": {
+      "reasoning": "哈哈哈",
+      "killer": "玛莎·霍普金斯",
+      "submittedAt": "2025-07-30T10:48:48.985Z"
+    },
+    "validation": {
+      "correct": false,
+      "accuracy": 0,
+      "feedback": "用户的推理与案件真相不符，凶手应为理查德·莫里森，而非玛莎·霍普金斯。用户的推理过程缺乏逻辑性和证据支持。",
+      "suggestions": [
+        "建议用户重新审视所有线索，特别是与理查德·莫里森相关的线索。",
+        "建议用户在推理过程中提供更多具体的证据和逻辑分析。"
+      ],
+      "score": 0,
+      "correctKiller": "理查德·莫里森",
+      "analysis": {
+        "factAccuracy": 0,
+        "logicCompleteness": 0,
+        "evidenceStrength": 0
+      }
+    },
+    "endTime": "2025-07-30T10:49:00.659Z"
+  },
+  "createdAt": "2025-07-30T10:29:35.512Z",
+  "updatedAt": "2025-07-30T10:49:00.662Z"
+}

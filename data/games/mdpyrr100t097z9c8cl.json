@@ -1,0 +1,721 @@
+{
+  "id": "mdpyrr100t097z9c8cl",
+  "config": {
+    "gameType": "classic",
+    "gameStyle": "detective",
+    "customPrompt": "密室杀人"
+  },
+  "script": {
+    "title": "The Locked Room Lament",
+    "background": "In the heart of the city, where the shadows cling to the buildings like old lovers, a murder in a locked room sets the stage for a tale of greed, betrayal, and the kind of justice that leaves a bitter taste in your mouth.",
+    "location": "The penthouse of the old Marlowe Building, a place where the rich come to play and sometimes to die.",
+    "initialCharacters": [
+      {
+        "id": "char1",
+        "name": "Maggie O'Connell",
+        "age": 28,
+        "role": "witness",
+        "personality": "Sharp-tongued and sharper-eyed, Maggie doesn't miss much, especially when it comes to the shortcomings of others.",
+        "background": "A secretary with dreams bigger than her paycheck, she's seen enough to know that in this city, everyone has a price.",
+        "appearance": "A redhead with a figure that turns heads and a smile that could cut glass.",
+        "relationships": {
+          "char2": "Employer",
+          "char3": "Ex-lover"
+        },
+        "secrets": [
+          "She's been embezzling small amounts from her employer, thinking no one would notice."
+        ],
+        "alibi": "Was at her desk outside the penthouse, claims she saw no one enter or leave.",
+        "suspicionLevel": 20,
+        "isInitiallyAvailable": true
+      }
+    ],
+    "hiddenCharacters": [
+      {
+        "id": "char2",
+        "name": "Vincent Marlowe",
+        "age": 45,
+        "role": "suspect",
+        "personality": "A man who's used to getting what he wants, by any means necessary.",
+        "background": "The owner of the Marlowe Building and several other less savory enterprises.",
+        "appearance": "Tall, with a suit that costs more than most make in a year and eyes that never quite meet yours.",
+        "relationships": {
+          "char1": "Employee",
+          "char4": "Business rival"
+        },
+        "secrets": [
+          "He was being blackmailed by the victim."
+        ],
+        "alibi": "Claims to have been in a meeting across town, but no one can confirm.",
+        "suspicionLevel": 40,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "blackmail",
+          "Marlowe Building"
+        ],
+        "discoveryHints": "Maggie might let slip about the strange calls Vincent's been getting."
+      },
+      {
+        "id": "char3",
+        "name": "Jackie 'The Knife' Malone",
+        "age": 35,
+        "role": "suspect",
+        "personality": "A man with a temper and a reputation for solving problems with his fists.",
+        "background": "A small-time enforcer with big-time dreams, and a history with the victim.",
+        "appearance": "Built like a bulldog, with scars that tell stories he'd rather not share.",
+        "relationships": {
+          "char1": "Ex-lover",
+          "char5": "Former partner in crime"
+        },
+        "secrets": [
+          "He owed the victim a large sum of money."
+        ],
+        "alibi": "Says he was at a bar, but the bartender's memory is conveniently foggy.",
+        "suspicionLevel": 50,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "debt",
+          "bar fight"
+        ],
+        "discoveryHints": "A matchbook from the bar found near the scene might lead to him."
+      },
+      {
+        "id": "char4",
+        "name": "Eleanor Voss",
+        "age": 50,
+        "role": "suspect",
+        "personality": "Cold as a winter's night and twice as bitter.",
+        "background": "A businesswoman with a knack for buying out her competition, by any means necessary.",
+        "appearance": "Impeccably dressed, with a gaze that could freeze hell over.",
+        "relationships": {
+          "char2": "Business rival",
+          "char5": "Silent partner"
+        },
+        "secrets": [
+          "She was planning to take over Marlowe's empire, with or without his consent."
+        ],
+        "alibi": "Was at a charity event, surrounded by people who wouldn't notice if she slipped out.",
+        "suspicionLevel": 30,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "takeover",
+          "charity"
+        ],
+        "discoveryHints": "A note about a meeting with the victim found in her office."
+      },
+      {
+        "id": "char5",
+        "name": "Ricky 'Fingers' Malone",
+        "age": 40,
+        "role": "hidden",
+        "personality": "Slippery as an eel and twice as hard to catch.",
+        "background": "A con artist with a finger in every pie, and a brother who's more brawn than brains.",
+        "appearance": "Lean, with a smile that doesn't reach his eyes and hands that are always moving.",
+        "relationships": {
+          "char3": "Brother",
+          "char4": "Silent partner"
+        },
+        "secrets": [
+          "He was the one blackmailing Vincent Marlowe, using information the victim had."
+        ],
+        "alibi": "Nowhere to be found when the murder happened.",
+        "suspicionLevel": 60,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "blackmail",
+          "con artist"
+        ],
+        "discoveryHints": "A coded message in the victim's ledger points to him."
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue1",
+        "name": "Matchbook from 'The Rusty Nail'",
+        "description": "A matchbook from a bar known for its rough clientele, found under the victim's desk.",
+        "location": "Under the victim's desk",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue2",
+        "name": "Coded Ledger Entry",
+        "description": "A page in the victim's ledger with a series of numbers that don't match any known accounts.",
+        "location": "Victim's desk drawer",
+        "importance": "high",
+        "relatedCharacters": [
+          "char5"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue3",
+        "name": "Blackmail Note",
+        "description": "A note demanding money, found crumpled in Vincent Marlowe's wastebasket.",
+        "location": "Vincent Marlowe's office",
+        "importance": "high",
+        "relatedCharacters": [
+          "char2",
+          "char5"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue4",
+        "name": "Charity Guest List",
+        "description": "A guest list from the charity event, with Eleanor Voss's name highlighted.",
+        "location": "Eleanor Voss's office",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue5",
+        "name": "Embezzlement Records",
+        "description": "Small discrepancies in the company's accounts, traced back to Maggie's computer.",
+        "location": "Maggie O'Connell's desk",
+        "importance": "low",
+        "relatedCharacters": [
+          "char1"
+        ],
+        "discoveredAt": null
+      }
+    ],
+    "truth": {
+      "killer": "Ricky 'Fingers' Malone",
+      "method": "Poisoned drink, administered during a private meeting where he thought no one would see.",
+      "motive": "The victim was about to reveal Ricky's blackmail scheme to Vincent Marlowe, cutting off his income.",
+      "timeline": "Ricky met with the victim under the guise of settling their deal, slipped the poison into his drink, and left before the effects took hold. The locked room was a ruse; the door was never actually locked from the inside."
+    },
+    "characters": [
+      {
+        "id": "char1",
+        "name": "Maggie O'Connell",
+        "age": 28,
+        "role": "witness",
+        "personality": "Sharp-tongued and sharper-eyed, Maggie doesn't miss much, especially when it comes to the shortcomings of others.",
+        "background": "A secretary with dreams bigger than her paycheck, she's seen enough to know that in this city, everyone has a price.",
+        "appearance": "A redhead with a figure that turns heads and a smile that could cut glass.",
+        "relationships": {
+          "char2": "Employer",
+          "char3": "Ex-lover"
+        },
+        "secrets": [
+          "She's been embezzling small amounts from her employer, thinking no one would notice."
+        ],
+        "alibi": "Was at her desk outside the penthouse, claims she saw no one enter or leave.",
+        "suspicionLevel": 20,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "Vincent Marlowe",
+        "age": 45,
+        "role": "suspect",
+        "personality": "A man who's used to getting what he wants, by any means necessary.",
+        "background": "The owner of the Marlowe Building and several other less savory enterprises.",
+        "appearance": "Tall, with a suit that costs more than most make in a year and eyes that never quite meet yours.",
+        "relationships": {
+          "char1": "Employee",
+          "char4": "Business rival"
+        },
+        "secrets": [
+          "He was being blackmailed by the victim."
+        ],
+        "alibi": "Claims to have been in a meeting across town, but no one can confirm.",
+        "suspicionLevel": 40,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "blackmail",
+          "Marlowe Building"
+        ],
+        "discoveryHints": "Maggie might let slip about the strange calls Vincent's been getting."
+      },
+      {
+        "id": "char3",
+        "name": "Jackie 'The Knife' Malone",
+        "age": 35,
+        "role": "suspect",
+        "personality": "A man with a temper and a reputation for solving problems with his fists.",
+        "background": "A small-time enforcer with big-time dreams, and a history with the victim.",
+        "appearance": "Built like a bulldog, with scars that tell stories he'd rather not share.",
+        "relationships": {
+          "char1": "Ex-lover",
+          "char5": "Former partner in crime"
+        },
+        "secrets": [
+          "He owed the victim a large sum of money."
+        ],
+        "alibi": "Says he was at a bar, but the bartender's memory is conveniently foggy.",
+        "suspicionLevel": 50,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "debt",
+          "bar fight"
+        ],
+        "discoveryHints": "A matchbook from the bar found near the scene might lead to him."
+      },
+      {
+        "id": "char4",
+        "name": "Eleanor Voss",
+        "age": 50,
+        "role": "suspect",
+        "personality": "Cold as a winter's night and twice as bitter.",
+        "background": "A businesswoman with a knack for buying out her competition, by any means necessary.",
+        "appearance": "Impeccably dressed, with a gaze that could freeze hell over.",
+        "relationships": {
+          "char2": "Business rival",
+          "char5": "Silent partner"
+        },
+        "secrets": [
+          "She was planning to take over Marlowe's empire, with or without his consent."
+        ],
+        "alibi": "Was at a charity event, surrounded by people who wouldn't notice if she slipped out.",
+        "suspicionLevel": 30,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "takeover",
+          "charity"
+        ],
+        "discoveryHints": "A note about a meeting with the victim found in her office."
+      },
+      {
+        "id": "char5",
+        "name": "Ricky 'Fingers' Malone",
+        "age": 40,
+        "role": "hidden",
+        "personality": "Slippery as an eel and twice as hard to catch.",
+        "background": "A con artist with a finger in every pie, and a brother who's more brawn than brains.",
+        "appearance": "Lean, with a smile that doesn't reach his eyes and hands that are always moving.",
+        "relationships": {
+          "char3": "Brother",
+          "char4": "Silent partner"
+        },
+        "secrets": [
+          "He was the one blackmailing Vincent Marlowe, using information the victim had."
+        ],
+        "alibi": "Nowhere to be found when the murder happened.",
+        "suspicionLevel": 60,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "blackmail",
+          "con artist"
+        ],
+        "discoveryHints": "A coded message in the victim's ledger points to him."
+      }
+    ]
+  },
+  "reasoningChain": {
+    "keyEvents": [
+      {
+        "id": "event_1",
+        "description": "Ricky 'Fingers' Malone poisons the victim during a private meeting.",
+        "timestamp": "Before the murder",
+        "participants": [
+          "char5"
+        ],
+        "evidence": [
+          "clue2",
+          "clue3"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_2",
+        "description": "The victim is found dead in a locked room.",
+        "timestamp": "After the murder",
+        "participants": [],
+        "evidence": [],
+        "importance": "high"
+      },
+      {
+        "id": "event_3",
+        "description": "Maggie O'Connell is discovered to have been embezzling small amounts from her employer.",
+        "timestamp": "Before the murder",
+        "participants": [
+          "char1"
+        ],
+        "evidence": [
+          "clue5"
+        ],
+        "importance": "low"
+      },
+      {
+        "id": "event_4",
+        "description": "Vincent Marlowe is revealed to be blackmailed by the victim.",
+        "timestamp": "Before the murder",
+        "participants": [
+          "char2"
+        ],
+        "evidence": [
+          "clue3"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_5",
+        "description": "Jackie 'The Knife' Malone's matchbook is found near the scene.",
+        "timestamp": "After the murder",
+        "participants": [
+          "char3"
+        ],
+        "evidence": [
+          "clue1"
+        ],
+        "importance": "medium"
+      }
+    ],
+    "causalRelations": [
+      {
+        "cause": "event_1",
+        "effect": "event_2",
+        "strength": "strong",
+        "description": "Ricky's poisoning of the victim directly leads to the victim's death."
+      },
+      {
+        "cause": "event_4",
+        "effect": "event_1",
+        "strength": "medium",
+        "description": "Vincent being blackmailed by the victim provides a motive for Ricky to kill the victim to protect his blackmail scheme."
+      },
+      {
+        "cause": "event_3",
+        "effect": "event_2",
+        "strength": "weak",
+        "description": "Maggie's embezzlement is unrelated to the murder but adds to the complexity of the case."
+      }
+    ],
+    "evidenceChain": [
+      {
+        "clueId": "clue2",
+        "connects": [
+          "clue3"
+        ],
+        "significance": "The coded ledger entry connects to the blackmail note, pointing to Ricky's involvement."
+      },
+      {
+        "clueId": "clue3",
+        "connects": [
+          "clue2"
+        ],
+        "significance": "The blackmail note found in Vincent's office links back to the coded ledger entry, indicating the blackmail scheme."
+      },
+      {
+        "clueId": "clue1",
+        "connects": [],
+        "significance": "The matchbook from 'The Rusty Nail' implicates Jackie but is a red herring."
+      }
+    ],
+    "timeline": [
+      {
+        "time": "Before the murder",
+        "event": "Ricky meets with the victim to poison him.",
+        "location": "The penthouse of the old Marlowe Building",
+        "witnesses": []
+      },
+      {
+        "time": "After the murder",
+        "event": "The victim is found dead in a locked room.",
+        "location": "The penthouse of the old Marlowe Building",
+        "witnesses": [
+          "char1"
+        ]
+      },
+      {
+        "time": "Before the murder",
+        "event": "Maggie embezzles from her employer.",
+        "location": "Maggie O'Connell's desk",
+        "witnesses": []
+      },
+      {
+        "time": "Before the murder",
+        "event": "Vincent is blackmailed by the victim.",
+        "location": "Vincent Marlowe's office",
+        "witnesses": []
+      },
+      {
+        "time": "After the murder",
+        "event": "Jackie's matchbook is found near the scene.",
+        "location": "Under the victim's desk",
+        "witnesses": []
+      }
+    ]
+  },
+  "images": {
+    "crimeScene": {
+      "success": true,
+      "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250730/1412f369/0c9b4971-a7bd-4618-ad43-2e2618890a33-1.png?Expires=1753966009&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=uYK73jjhUvmIQz2KcgQj05jKbYo%3D",
+      "type": "crime_scene",
+      "description": "案发现场",
+      "prompt": "推理小说案发现场：The penthouse of the old Marlowe Building, a place where the rich come to play and sometimes to die.，In the heart of the city, where the shadows cling to the buildings like old lovers, a murder in a locked room sets the stage for a tale of greed, betrayal, and the kind of justice that leaves a bitter taste in your mouth.，经典侦探风格，复古氛围，专业感，悬疑氛围，电影级画质，专业摄影，高清细节",
+      "usage": {
+        "image_count": 1
+      }
+    },
+    "characters": {
+      "char1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/fb/20250730/1412f369/4af11d15-9385-4875-a7e2-72e68fb20812-1.png?Expires=1753966041&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=fONprn5G9%2B7Cg8Gc3yXfVz0qf%2Fw%3D",
+        "type": "character_portrait",
+        "characterId": "char1",
+        "characterName": "Maggie O'Connell",
+        "description": "Maggie O'Connell的肖像",
+        "prompt": "人物肖像：A redhead with a figure that turns heads and a smile that could cut glass.，28岁，Sharp-tongued and sharper-eyed, Maggie doesn't miss much, especially when it comes to the shortcomings of others.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b2/20250730/1412f369/3d95253b-b23d-4d9d-b0aa-a22e8694fc1f-1.png?Expires=1753966072&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=RZ8FWGEgrk4jJy08I0Dok7mUn4w%3D",
+        "type": "character_portrait",
+        "characterId": "char2",
+        "characterName": "Vincent Marlowe",
+        "description": "Vincent Marlowe的肖像",
+        "prompt": "人物肖像：Tall, with a suit that costs more than most make in a year and eyes that never quite meet yours.，45岁，A man who's used to getting what he wants, by any means necessary.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/2f/20250730/1412f369/426614dd-7d5a-40c9-b3a4-659b4ce85858-1.png?Expires=1753966104&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=HLoaDFnc7plL0%2BGrXbiVsvbuJtQ%3D",
+        "type": "character_portrait",
+        "characterId": "char3",
+        "characterName": "Jackie 'The Knife' Malone",
+        "description": "Jackie 'The Knife' Malone的肖像",
+        "prompt": "人物肖像：Built like a bulldog, with scars that tell stories he'd rather not share.，35岁，A man with a temper and a reputation for solving problems with his fists.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/71/20250730/1412f369/ea50f1ab-a325-47df-94eb-815aa6237a91-1.png?Expires=1753966134&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=59KnahhgMfLVIs3n%2FO2NtCL7LXc%3D",
+        "type": "character_portrait",
+        "characterId": "char4",
+        "characterName": "Eleanor Voss",
+        "description": "Eleanor Voss的肖像",
+        "prompt": "人物肖像：Impeccably dressed, with a gaze that could freeze hell over.，50岁，Cold as a winter's night and twice as bitter.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250730/1412f369/f187ef1a-1a00-470e-a1a8-175babe127a0-1.png?Expires=1753966164&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=sYal0KItV0euRLUIDipjsD4z%2B74%3D",
+        "type": "character_portrait",
+        "characterId": "char5",
+        "characterName": "Ricky 'Fingers' Malone",
+        "description": "Ricky 'Fingers' Malone的肖像",
+        "prompt": "人物肖像：Lean, with a smile that doesn't reach his eyes and hands that are always moving.，40岁，Slippery as an eel and twice as hard to catch.的表情，经典侦探风格，复古氛围，专业感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "clues": {
+      "clue2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8d/20250730/1412f369/85163f1d-f697-4635-a575-0f240068d6a0-1.png?Expires=1753966195&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=D%2BHzQhmUoNnE1f37aU5T4QCEfTY%3D",
+        "type": "clue_image",
+        "clueId": "clue2",
+        "clueName": "Coded Ledger Entry",
+        "description": "线索：Coded Ledger Entry",
+        "prompt": "证物特写：A page in the victim's ledger with a series of numbers that don't match any known accounts.，推理小说道具，经典侦探风格，复古氛围，专业感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/9f/20250730/1412f369/ff736e97-7247-4acd-bbc5-fc7d9c44ffd0-1.png?Expires=1753966230&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=yiiOgjZkMi63ScyhPx9ZUvtg%2B9o%3D",
+        "type": "clue_image",
+        "clueId": "clue3",
+        "clueName": "Blackmail Note",
+        "description": "线索：Blackmail Note",
+        "prompt": "证物特写：A note demanding money, found crumpled in Vincent Marlowe's wastebasket.，推理小说道具，经典侦探风格，复古氛围，专业感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "locations": {}
+  },
+  "gameProgress": {
+    "currentPhase": "completed",
+    "discoveredClues": [
+      {
+        "id": "clue_001",
+        "name": "办公室资金流动异常",
+        "description": "Maggie提到办公室有不寻常的资金流动，可能与她的秘密有关。",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T12:52:09.465Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/2a/20250730/1412f369/b563b428-e051-4ac4-bee4-cd9352a6fe10-1.png?Expires=1753966385&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=wxpExxUaGTSgvcYOBepLhCKAYKk%3D",
+        "isNew": false
+      },
+      {
+        "id": "clue_3",
+        "name": "Vincent Marlowe's blackmail activities",
+        "description": "Vincent Marlowe is known to engage in blackmail, suggesting a network of secrets and leverage over individuals in the city.",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T12:56:12.063Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b0/20250730/1412f369/07998b53-2a88-4feb-bbf0-c629f771eb69-1.png?Expires=1753966625&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=4TJAz071MyfIcO45jDpvetBgwZk%3D",
+        "isNew": false
+      }
+    ],
+    "conversationHistory": [
+      {
+        "id": "mdpytqpkiub3gwqhnyd",
+        "characterId": "char1",
+        "character": "Maggie O'Connell",
+        "question": "你好用中文讲一下你看到了什么",
+        "response": "你好，我看到的东西可能比你想象的要复杂得多。这座城市里，每个人都有自己的小秘密，包括我。不过，既然你问了，我可以告诉你，最近办公室里有些...不寻常的资金流动。",
+        "timestamp": "2025-07-30T12:52:09.464Z",
+        "newClues": [
+          {
+            "id": "clue_001",
+            "name": "办公室资金流动异常",
+            "description": "Maggie提到办公室有不寻常的资金流动，可能与她的秘密有关。",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T12:52:09.465Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/2a/20250730/1412f369/b563b428-e051-4ac4-bee4-cd9352a6fe10-1.png?Expires=1753966385&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=wxpExxUaGTSgvcYOBepLhCKAYKk%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "char2",
+            "context": "作为Maggie的雇主，可能对办公室资金流动异常有所察觉。",
+            "relationship": "Employer",
+            "hint": "可能对Maggie的行为有所怀疑。"
+          }
+        ]
+      },
+      {
+        "id": "mdpyvylw3krjvsv5ipy",
+        "characterId": "char1",
+        "character": "Maggie O'Connell",
+        "question": "发生了什么为什么不寻常",
+        "response": "哦，你问这个啊... 好吧，既然你这么好奇，我就告诉你。最近办公室里有些账目对不上，虽然数目不大，但足够引起注意了。特别是当你知道这些钱都流向了某些... 不那么光明正大的地方时。",
+        "timestamp": "2025-07-30T12:53:53.012Z",
+        "newClues": [
+          {
+            "id": "clue_001",
+            "name": "异常资金流动",
+            "description": "办公室账目中出现的小额不一致，流向不明。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "char2",
+            "context": "作为Maggie的雇主，可能是异常资金流动的受害者或相关方。",
+            "relationship": "Employer",
+            "hint": "对办公室的财务管理非常严格，可能会对任何异常非常敏感。"
+          }
+        ]
+      },
+      {
+        "id": "mdpyyxwegzrc05gw03q",
+        "characterId": "char1",
+        "character": "Maggie O'Connell",
+        "question": "Vincent Marlowe blackmail",
+        "response": "Vincent Marlowe? That slimy weasel has his fingers in every dirty pie in this city. If he's blackmailing someone, it wouldn't surprise me one bit. But why are you asking about him? Got something to hide yourself?",
+        "timestamp": "2025-07-30T12:56:12.062Z",
+        "newClues": [
+          {
+            "id": "clue_3",
+            "name": "Vincent Marlowe's blackmail activities",
+            "description": "Vincent Marlowe is known to engage in blackmail, suggesting a network of secrets and leverage over individuals in the city.",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T12:56:12.063Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b0/20250730/1412f369/07998b53-2a88-4feb-bbf0-c629f771eb69-1.png?Expires=1753966625&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=4TJAz071MyfIcO45jDpvetBgwZk%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "Vincent Marlowe",
+            "context": "Known for engaging in blackmail and having a network of secrets.",
+            "relationship": "Acquaintance with questionable dealings",
+            "hint": "Vincent might have information or leverage over other characters, including possibly Maggie herself."
+          }
+        ]
+      },
+      {
+        "id": "mdpz1aqdjlhqjux6nsr",
+        "characterId": "char2",
+        "character": "Vincent Marlowe",
+        "question": "你好你关于案件有什么能告诉我吗",
+        "response": "Ah, the case... It's a tangled web we weave, isn't it? Let's just say, the victim had a knack for uncovering secrets that were best left buried. As for what I can tell you... well, let's say there's more to this than meets the eye. The victim was poking around where they shouldn't have been, and not everyone appreciates that kind of curiosity.",
+        "timestamp": "2025-07-30T12:58:02.005Z",
+        "newClues": [
+          {
+            "id": "clue_001",
+            "name": "Unusual financial transactions",
+            "description": "Recent financial discrepancies in the office, with funds directed towards questionable outlets.",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "char4",
+            "context": "Business rival with possible motives related to the victim's investigations.",
+            "relationship": "Business rival",
+            "hint": "Has been known to engage in underhanded tactics to eliminate competition."
+          }
+        ]
+      }
+    ],
+    "suspicionLevels": {
+      "char1": 35,
+      "char2": 45,
+      "char3": 50,
+      "char4": 30,
+      "char5": 60
+    },
+    "availableCharacters": [
+      "char1",
+      "char2"
+    ],
+    "discoveredCharacters": [
+      {
+        "characterId": "char2",
+        "discoveredAt": "2025-07-30T12:57:13.081Z",
+        "discoveredThrough": "Known for engaging in blackmail and having a network of secrets.",
+        "mentionedBy": "Acquaintance with questionable dealings"
+      }
+    ],
+    "startTime": "2025-07-30T12:50:36.564Z",
+    "reasoning": {
+      "reasoning": "他就是凶手",
+      "killer": "Vincent Marlowe",
+      "submittedAt": "2025-07-30T12:58:22.623Z"
+    },
+    "validation": {
+      "correct": false,
+      "accuracy": 30,
+      "feedback": "用户的推理与案件真相不符。用户指认Vincent Marlowe为凶手，但实际凶手是Ricky 'Fingers' Malone。用户的推理过程过于简单，缺乏对作案手法和动机的深入分析。",
+      "suggestions": [
+        "深入分析作案手法和动机，确保推理与案件细节相符。",
+        "考虑所有已发现的线索，而不仅仅是那些支持自己假设的线索。"
+      ],
+      "score": 30,
+      "correctKiller": "Ricky 'Fingers' Malone",
+      "analysis": {
+        "factAccuracy": 40,
+        "logicCompleteness": 20,
+        "evidenceStrength": 30
+      }
+    },
+    "endTime": "2025-07-30T12:58:35.018Z"
+  },
+  "createdAt": "2025-07-30T12:50:36.565Z",
+  "updatedAt": "2025-07-30T12:58:35.021Z"
+}

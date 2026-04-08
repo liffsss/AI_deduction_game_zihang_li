@@ -1,0 +1,1840 @@
+{
+  "id": "mdoq192cho4j4c0s0n",
+  "config": {
+    "gameType": "historical",
+    "gameStyle": "thriller",
+    "customPrompt": "密室杀人案"
+  },
+  "script": {
+    "title": "雾中密室",
+    "background": "在一个雾气弥漫的夜晚，伦敦一座古老的图书馆内发生了一起离奇的密室杀人案。受害者是一位著名的古董收藏家，被发现时手中紧握着一枚古老的硬币。",
+    "location": "伦敦古老图书馆的密室",
+    "initialCharacters": [
+      {
+        "id": "char1",
+        "name": "约翰·华生",
+        "age": 40,
+        "role": "witness",
+        "personality": "忠诚、勇敢、善于观察",
+        "background": "退役军医，福尔摩斯的挚友和助手",
+        "appearance": "中等身材，留着整齐的胡须，常穿西装",
+        "relationships": {
+          "char2": "朋友"
+        },
+        "secrets": [
+          "无"
+        ],
+        "alibi": "案发时与福尔摩斯在一起",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "夏洛克·福尔摩斯",
+        "age": 35,
+        "role": "detective",
+        "personality": "冷静、理智、观察力极强",
+        "background": "著名侦探，擅长解决复杂案件",
+        "appearance": "高瘦身材，锐利的眼神，常穿黑色大衣",
+        "relationships": {
+          "char1": "朋友"
+        },
+        "secrets": [
+          "无"
+        ],
+        "alibi": "案发时与华生在一起",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      }
+    ],
+    "hiddenCharacters": [
+      {
+        "id": "char3",
+        "name": "艾琳·艾德勒",
+        "age": 30,
+        "role": "suspect",
+        "personality": "聪明、神秘、善于伪装",
+        "background": "前歌剧演员，与受害者有过节",
+        "appearance": "美丽动人，常戴面纱",
+        "relationships": {
+          "char1": "熟人"
+        },
+        "secrets": [
+          "曾与受害者有秘密交易"
+        ],
+        "alibi": "声称案发时在家，但无人证实",
+        "suspicionLevel": 50,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "歌剧",
+          "面纱"
+        ],
+        "discoveryHints": "华生提到曾见过一位戴面纱的女子在图书馆附近徘徊"
+      },
+      {
+        "id": "char4",
+        "name": "詹姆斯·莫里亚蒂",
+        "age": 45,
+        "role": "suspect",
+        "personality": "狡猾、冷酷、极具智慧",
+        "background": "犯罪组织的头目，与受害者有商业往来",
+        "appearance": "中等身材，面无表情，常穿黑色西装",
+        "relationships": {
+          "char2": "宿敌"
+        },
+        "secrets": [
+          "曾威胁过受害者"
+        ],
+        "alibi": "无",
+        "suspicionLevel": 70,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "犯罪组织",
+          "威胁"
+        ],
+        "discoveryHints": "福尔摩斯提到受害者最近收到过匿名威胁信"
+      },
+      {
+        "id": "char5",
+        "name": "玛丽·摩斯坦",
+        "age": 28,
+        "role": "suspect",
+        "personality": "温柔、善良、但内心坚强",
+        "background": "受害者的侄女，遗产继承人",
+        "appearance": "年轻美丽，常穿淡色长裙",
+        "relationships": {
+          "char1": "朋友"
+        },
+        "secrets": [
+          "急需资金"
+        ],
+        "alibi": "声称案发时在朋友家，但朋友记不清具体时间",
+        "suspicionLevel": 30,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "遗产",
+          "资金"
+        ],
+        "discoveryHints": "华生提到玛丽最近经济状况不佳"
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue1",
+        "name": "古老硬币",
+        "description": "受害者手中紧握的硬币，上面刻有奇怪的符号",
+        "location": "受害者手中",
+        "importance": "high",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue2",
+        "name": "匿名威胁信",
+        "description": "受害者最近收到的匿名信，内容含糊但充满威胁",
+        "location": "受害者书桌抽屉",
+        "importance": "high",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue3",
+        "name": "面纱",
+        "description": "图书馆附近发现的女性面纱",
+        "location": "图书馆附近的小巷",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue4",
+        "name": "遗产文件",
+        "description": "受害者最新的遗嘱，将大部分财产留给玛丽",
+        "location": "受害者保险箱",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char5"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue5",
+        "name": "商业合同",
+        "description": "受害者与莫里亚蒂的商业合同，内容涉及非法交易",
+        "location": "受害者书桌",
+        "importance": "high",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      }
+    ],
+    "truth": {
+      "killer": "艾琳·艾德勒",
+      "method": "利用受害者对她的信任，在茶中下毒",
+      "motive": "受害者威胁要揭露她的秘密交易",
+      "timeline": "艾琳在案发前拜访受害者，下毒后离开，受害者随后在密室中死亡"
+    },
+    "characters": [
+      {
+        "id": "char1",
+        "name": "约翰·华生",
+        "age": 40,
+        "role": "witness",
+        "personality": "忠诚、勇敢、善于观察",
+        "background": "退役军医，福尔摩斯的挚友和助手",
+        "appearance": "中等身材，留着整齐的胡须，常穿西装",
+        "relationships": {
+          "char2": "朋友"
+        },
+        "secrets": [
+          "无"
+        ],
+        "alibi": "案发时与福尔摩斯在一起",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "夏洛克·福尔摩斯",
+        "age": 35,
+        "role": "detective",
+        "personality": "冷静、理智、观察力极强",
+        "background": "著名侦探，擅长解决复杂案件",
+        "appearance": "高瘦身材，锐利的眼神，常穿黑色大衣",
+        "relationships": {
+          "char1": "朋友"
+        },
+        "secrets": [
+          "无"
+        ],
+        "alibi": "案发时与华生在一起",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char3",
+        "name": "艾琳·艾德勒",
+        "age": 30,
+        "role": "suspect",
+        "personality": "聪明、神秘、善于伪装",
+        "background": "前歌剧演员，与受害者有过节",
+        "appearance": "美丽动人，常戴面纱",
+        "relationships": {
+          "char1": "熟人"
+        },
+        "secrets": [
+          "曾与受害者有秘密交易"
+        ],
+        "alibi": "声称案发时在家，但无人证实",
+        "suspicionLevel": 50,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "歌剧",
+          "面纱"
+        ],
+        "discoveryHints": "华生提到曾见过一位戴面纱的女子在图书馆附近徘徊"
+      },
+      {
+        "id": "char4",
+        "name": "詹姆斯·莫里亚蒂",
+        "age": 45,
+        "role": "suspect",
+        "personality": "狡猾、冷酷、极具智慧",
+        "background": "犯罪组织的头目，与受害者有商业往来",
+        "appearance": "中等身材，面无表情，常穿黑色西装",
+        "relationships": {
+          "char2": "宿敌"
+        },
+        "secrets": [
+          "曾威胁过受害者"
+        ],
+        "alibi": "无",
+        "suspicionLevel": 70,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "犯罪组织",
+          "威胁"
+        ],
+        "discoveryHints": "福尔摩斯提到受害者最近收到过匿名威胁信"
+      },
+      {
+        "id": "char5",
+        "name": "玛丽·摩斯坦",
+        "age": 28,
+        "role": "suspect",
+        "personality": "温柔、善良、但内心坚强",
+        "background": "受害者的侄女，遗产继承人",
+        "appearance": "年轻美丽，常穿淡色长裙",
+        "relationships": {
+          "char1": "朋友"
+        },
+        "secrets": [
+          "急需资金"
+        ],
+        "alibi": "声称案发时在朋友家，但朋友记不清具体时间",
+        "suspicionLevel": 30,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "遗产",
+          "资金"
+        ],
+        "discoveryHints": "华生提到玛丽最近经济状况不佳"
+      }
+    ]
+  },
+  "reasoningChain": {
+    "keyEvents": [
+      {
+        "id": "event_1",
+        "description": "艾琳·艾德勒拜访受害者",
+        "timestamp": "案发前",
+        "participants": [
+          "char3"
+        ],
+        "evidence": [
+          "clue1",
+          "clue3"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_2",
+        "description": "受害者收到匿名威胁信",
+        "timestamp": "案发前",
+        "participants": [
+          "char4"
+        ],
+        "evidence": [
+          "clue2"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_3",
+        "description": "受害者更新遗嘱，将大部分财产留给玛丽",
+        "timestamp": "案发前",
+        "participants": [
+          "char5"
+        ],
+        "evidence": [
+          "clue4"
+        ],
+        "importance": "medium"
+      },
+      {
+        "id": "event_4",
+        "description": "受害者与莫里亚蒂的商业合同被发现",
+        "timestamp": "案发前",
+        "participants": [
+          "char4"
+        ],
+        "evidence": [
+          "clue5"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_5",
+        "description": "受害者被发现死于密室",
+        "timestamp": "案发时",
+        "participants": [
+          "char1",
+          "char2"
+        ],
+        "evidence": [
+          "clue1"
+        ],
+        "importance": "high"
+      }
+    ],
+    "causalRelations": [
+      {
+        "cause": "event_1",
+        "effect": "event_5",
+        "strength": "strong",
+        "description": "艾琳·艾德勒利用受害者对她的信任下毒，导致受害者死亡"
+      },
+      {
+        "cause": "event_2",
+        "effect": "event_5",
+        "strength": "medium",
+        "description": "匿名威胁信增加了莫里亚蒂的嫌疑，但实际凶手是艾琳"
+      },
+      {
+        "cause": "event_3",
+        "effect": "event_5",
+        "strength": "weak",
+        "description": "玛丽作为遗产继承人有动机，但实际凶手是艾琳"
+      },
+      {
+        "cause": "event_4",
+        "effect": "event_5",
+        "strength": "medium",
+        "description": "商业合同揭示了莫里亚蒂与受害者的非法交易，增加了他的嫌疑"
+      }
+    ],
+    "evidenceChain": [
+      {
+        "clueId": "clue1",
+        "connects": [
+          "clue3"
+        ],
+        "significance": "古老硬币和面纱指向艾琳·艾德勒"
+      },
+      {
+        "clueId": "clue2",
+        "connects": [
+          "clue5"
+        ],
+        "significance": "匿名威胁信和商业合同指向詹姆斯·莫里亚蒂"
+      },
+      {
+        "clueId": "clue3",
+        "connects": [
+          "clue1"
+        ],
+        "significance": "面纱与古老硬币共同指向艾琳·艾德勒"
+      },
+      {
+        "clueId": "clue4",
+        "connects": [],
+        "significance": "遗产文件指向玛丽·摩斯坦的动机"
+      },
+      {
+        "clueId": "clue5",
+        "connects": [
+          "clue2"
+        ],
+        "significance": "商业合同与匿名威胁信共同指向詹姆斯·莫里亚蒂"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "案发前",
+        "event": "艾琳·艾德勒拜访受害者",
+        "location": "伦敦古老图书馆的密室",
+        "witnesses": []
+      },
+      {
+        "time": "案发前",
+        "event": "受害者收到匿名威胁信",
+        "location": "受害者书桌抽屉",
+        "witnesses": []
+      },
+      {
+        "time": "案发前",
+        "event": "受害者更新遗嘱",
+        "location": "受害者保险箱",
+        "witnesses": []
+      },
+      {
+        "time": "案发前",
+        "event": "受害者与莫里亚蒂的商业合同被发现",
+        "location": "受害者书桌",
+        "witnesses": []
+      },
+      {
+        "time": "案发时",
+        "event": "受害者被发现死于密室",
+        "location": "伦敦古老图书馆的密室",
+        "witnesses": [
+          "char1",
+          "char2"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "crimeScene": {
+      "success": true,
+      "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/07/20250729/1412f369/743e5c49-e106-46fb-99ff-81edd419868f-1.png?Expires=1753890846&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=YrdDPR%2BXIEBARxwtYdZ8vSDRxCk%3D",
+      "type": "crime_scene",
+      "description": "案发现场",
+      "prompt": "推理小说案发现场：伦敦古老图书馆的密室，在一个雾气弥漫的夜晚，伦敦一座古老的图书馆内发生了一起离奇的密室杀人案。受害者是一位著名的古董收藏家，被发现时手中紧握着一枚古老的硬币。，紧张氛围，戏剧性光线，悬疑感，悬疑氛围，电影级画质，专业摄影，高清细节",
+      "usage": {
+        "image_count": 1
+      }
+    },
+    "characters": {
+      "char1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/fa/20250729/1412f369/0a36a792-1d2d-424e-a571-2ca9c878220c-1.png?Expires=1753890877&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=5vJi2W4wMzD8HRKhs1scW00G5lM%3D",
+        "type": "character_portrait",
+        "characterId": "char1",
+        "characterName": "约翰·华生",
+        "description": "约翰·华生的肖像",
+        "prompt": "人物肖像：中等身材，留着整齐的胡须，常穿西装，40岁，忠诚、勇敢、善于观察的表情，紧张氛围，戏剧性光线，悬疑感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/ac/20250729/1412f369/f5a1e64f-cde7-4835-aba6-817e8f5f5026-1.png?Expires=1753890907&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=N6fwz9bHRg90AoXnQXHWQVf8RK8%3D",
+        "type": "character_portrait",
+        "characterId": "char2",
+        "characterName": "夏洛克·福尔摩斯",
+        "description": "夏洛克·福尔摩斯的肖像",
+        "prompt": "人物肖像：高瘦身材，锐利的眼神，常穿黑色大衣，35岁，冷静、理智、观察力极强的表情，紧张氛围，戏剧性光线，悬疑感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/80/20250729/1412f369/cc06e3bc-13eb-4e10-b305-7f057364ac38-1.png?Expires=1753890939&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=LZr7Kc6Qd%2BR3dLKT8%2Bp2%2FdZLRQI%3D",
+        "type": "character_portrait",
+        "characterId": "char3",
+        "characterName": "艾琳·艾德勒",
+        "description": "艾琳·艾德勒的肖像",
+        "prompt": "人物肖像：美丽动人，常戴面纱，30岁，聪明、神秘、善于伪装的表情，紧张氛围，戏剧性光线，悬疑感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/18/20250729/1412f369/adea096f-378d-414c-8799-5d763e0fe43d-1.png?Expires=1753890969&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=IsKHixuebUH4hQPFLYAKLAL8c9E%3D",
+        "type": "character_portrait",
+        "characterId": "char4",
+        "characterName": "詹姆斯·莫里亚蒂",
+        "description": "詹姆斯·莫里亚蒂的肖像",
+        "prompt": "人物肖像：中等身材，面无表情，常穿黑色西装，45岁，狡猾、冷酷、极具智慧的表情，紧张氛围，戏剧性光线，悬疑感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f5/20250729/1412f369/995e6a09-bf7d-428c-8703-51f99173ccdc-1.png?Expires=1753890999&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Gug6S2F%2B3xsj7DFZOhgBl1dWTnQ%3D",
+        "type": "character_portrait",
+        "characterId": "char5",
+        "characterName": "玛丽·摩斯坦",
+        "description": "玛丽·摩斯坦的肖像",
+        "prompt": "人物肖像：年轻美丽，常穿淡色长裙，28岁，温柔、善良、但内心坚强的表情，紧张氛围，戏剧性光线，悬疑感，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "clues": {
+      "clue1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/84/20250729/1412f369/8f63e9bb-6257-4ee6-bde4-29ef0fe7f970-1.png?Expires=1753891030&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=s5rwGVUaoTT9kxNLH5w4Som4w9E%3D",
+        "type": "clue_image",
+        "clueId": "clue1",
+        "clueName": "古老硬币",
+        "description": "线索：古老硬币",
+        "prompt": "证物特写：受害者手中紧握的硬币，上面刻有奇怪的符号，推理小说道具，紧张氛围，戏剧性光线，悬疑感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f2/20250729/1412f369/02ab84c4-0d84-478a-b736-d39020d32b4c-1.png?Expires=1753891060&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=xmKgKZHtKVFI8AT28iEtZdtZj2I%3D",
+        "type": "clue_image",
+        "clueId": "clue2",
+        "clueName": "匿名威胁信",
+        "description": "线索：匿名威胁信",
+        "prompt": "证物特写：受害者最近收到的匿名信，内容含糊但充满威胁，推理小说道具，紧张氛围，戏剧性光线，悬疑感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/2b/20250729/1412f369/2a8482e7-f9f4-4d92-9fa0-01cca932ac5f-1.png?Expires=1753891091&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vkz7jy%2Fz2s2KVd9xH3MCgCHjoHE%3D",
+        "type": "clue_image",
+        "clueId": "clue5",
+        "clueName": "商业合同",
+        "description": "线索：商业合同",
+        "prompt": "证物特写：受害者与莫里亚蒂的商业合同，内容涉及非法交易，推理小说道具，紧张氛围，戏剧性光线，悬疑感，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "locations": {}
+  },
+  "gameProgress": {
+    "currentPhase": "completed",
+    "discoveredClues": [
+      {
+        "id": "clue1",
+        "name": "年轻女士的证词",
+        "description": "年轻女士声称她是第一个发现尸体的人，但她的行为有些可疑。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T08:49:01.629Z",
+        "isNew": false
+      },
+      {
+        "id": "clue2",
+        "name": "中年男子的不安",
+        "description": "中年男子自称是死者的同事，但他的不安情绪似乎超出了正常范围。",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T08:49:01.630Z",
+        "isNew": false,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/d1/20250730/1412f369/a7875a2e-9291-49b2-b5a6-1a46b87c98fc-1.png?Expires=1753951766&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=4YUtgOxvwlLe1%2BYn1tOUoF4BosM%3D"
+      },
+      {
+        "id": "clue3",
+        "name": "莱斯特警长的特别关注",
+        "description": "莱斯特警长对现场某些细节表现出特别的关注。",
+        "importance": "low",
+        "discoveredAt": "2025-07-30T08:50:34.880Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_1",
+        "name": "艾米丽·沃森手腕上的伤痕",
+        "description": "艾米丽·沃森手腕上有不规则的伤痕，她解释为在图书馆整理书籍时被书架划伤，但伤痕形状与解释不符。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T09:02:37.152Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_4",
+        "name": "遗产纠纷",
+        "description": "死者对艾米丽·沃森的遗产表现出异常的兴趣，并试图说服她投资一个未指明的项目。",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T09:04:42.139Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f0/20250730/1412f369/ac1adc1d-2f03-48dc-8111-8980d529a999-1.png?Expires=1753952706&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=vHAh8t%2BP%2BQG0UWDnLCrPAihWryw%3D",
+        "isNew": false
+      },
+      {
+        "id": "clue_5",
+        "name": "古董收藏家的接触记录",
+        "description": "调查是否有古董收藏家近期与玛格丽特或艾米丽有过接触，尤其是在遗嘱更改前后。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T09:10:58.528Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_2",
+        "name": "特定古董的兴趣",
+        "description": "理查德·莫里亚蒂对玛格丽特收藏中的几件特定古董表现出异常兴趣。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-30T09:17:28.624Z",
+        "isNew": false
+      },
+      {
+        "id": "clue_001",
+        "name": "莫里亚蒂的犯罪网络",
+        "description": "一个遍布伦敦乃至国际的犯罪组织，涉及多种非法活动。",
+        "importance": "high",
+        "discoveredAt": "2025-07-30T10:16:06.321Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8f/20250730/1412f369/30bf7922-48e0-4048-b888-0345797641cf-1.png?Expires=1753956990&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=T0etVY3BH8jSfMMriNPlS4mLZoo%3D",
+        "isNew": false
+      }
+    ],
+    "conversationHistory": [
+      {
+        "id": "mdpq52nxnk0vyj94trf",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "死者身边都有哪些人",
+        "response": "在我到达现场时，死者身边有几个人。首先是一位年轻的女士，她显得非常震惊，似乎是第一个发现尸体的人。还有一位中年男子，他自称是死者的同事，看起来有些不安。此外，还有一位警察正在记录现场情况。",
+        "timestamp": "2025-07-30T08:49:01.629Z",
+        "newClues": [
+          {
+            "id": "clue1",
+            "name": "年轻女士的证词",
+            "description": "年轻女士声称她是第一个发现尸体的人，但她的行为有些可疑。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T08:49:01.629Z",
+            "isNew": false
+          },
+          {
+            "id": "clue2",
+            "name": "中年男子的不安",
+            "description": "中年男子自称是死者的同事，但他的不安情绪似乎超出了正常范围。",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T08:49:01.630Z",
+            "isNew": false,
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/d1/20250730/1412f369/a7875a2e-9291-49b2-b5a6-1a46b87c98fc-1.png?Expires=1753951766&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=4YUtgOxvwlLe1%2BYn1tOUoF4BosM%3D"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "夏洛克·福尔摩斯",
+            "context": "虽然福尔摩斯不在现场，但他的推理能力对解决此案至关重要。",
+            "relationship": "挚友和助手",
+            "hint": "福尔摩斯可能已经注意到了一些我们忽略的细节。"
+          },
+          {
+            "name": "年轻女士",
+            "context": "作为第一个发现尸体的人，她的证词非常关键。",
+            "relationship": "目击者",
+            "hint": "她的行为有些可疑，可能需要进一步调查。"
+          },
+          {
+            "name": "中年男子",
+            "context": "自称是死者的同事，但他的情绪反应值得注意。",
+            "relationship": "可能的嫌疑人",
+            "hint": "他的不安可能暗示着他与死者之间有更复杂的关系。"
+          }
+        ]
+      },
+      {
+        "id": "mdpq72m80ah81agu3tzq",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "请细致介绍这些角色",
+        "response": "那位年轻的女士名叫艾米丽·沃森，她是一名图书管理员，与死者有过几次接触。她显得非常震惊，几乎无法言语，我注意到她的手上有些微的伤痕，可能是挣扎时留下的。那位中年男子是理查德·莫里森，死者的同事，他们在同一家银行工作。他看起来不安，但眼神闪烁，似乎在隐瞒什么。至于那位警察，是莱斯特警长，他正在尽职地记录现场情况，但我注意到他对某些细节似乎特别关注。",
+        "timestamp": "2025-07-30T08:50:34.880Z",
+        "newClues": [
+          {
+            "id": "clue1",
+            "name": "艾米丽·沃森的手上伤痕",
+            "description": "艾米丽·沃森的手上有微小的伤痕，可能是最近造成的。",
+            "importance": "medium"
+          },
+          {
+            "id": "clue2",
+            "name": "理查德·莫里森的不安",
+            "description": "理查德·莫里森显得不安，眼神闪烁，似乎在隐瞒某些信息。",
+            "importance": "high"
+          },
+          {
+            "id": "clue3",
+            "name": "莱斯特警长的特别关注",
+            "description": "莱斯特警长对现场某些细节表现出特别的关注。",
+            "importance": "low",
+            "discoveredAt": "2025-07-30T08:50:34.880Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "第一个发现尸体的年轻女士",
+            "relationship": "目击者",
+            "hint": "手上的伤痕可能与她最近的活动有关"
+          },
+          {
+            "name": "理查德·莫里森",
+            "context": "死者的同事",
+            "relationship": "可能的嫌疑人",
+            "hint": "不安和闪烁的眼神暗示他可能知道更多"
+          },
+          {
+            "name": "莱斯特警长",
+            "context": "记录现场情况的警察",
+            "relationship": "执法者",
+            "hint": "对某些细节的特别关注可能指向案件的关键"
+          }
+        ]
+      },
+      {
+        "id": "mdpqmjxbov39zvpn8i7",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "艾米丽·沃森手腕上有伤痕这怎么回事你去问问",
+        "response": "我注意到艾米丽·沃森手腕上的伤痕时，确实感到有些疑惑。那些伤痕看起来像是最近才有的，而且形状不规则，不像是自己造成的。我决定上前询问她，她显得有些慌乱，解释说是在图书馆整理书籍时不慎被书架划伤的。然而，她的解释与伤痕的形状并不完全吻合，这让我觉得事情可能并不简单。",
+        "timestamp": "2025-07-30T09:02:37.151Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾米丽·沃森手腕上的伤痕",
+            "description": "艾米丽·沃森手腕上有不规则的伤痕，她解释为在图书馆整理书籍时被书架划伤，但伤痕形状与解释不符。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T09:02:37.152Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "询问关于她手腕上的伤痕",
+            "relationship": "目击者与死者有过接触",
+            "hint": "她的伤痕可能与案件有关，需要进一步调查。"
+          },
+          {
+            "name": "理查德·莫里森",
+            "context": "作为死者的同事在场",
+            "relationship": "同事",
+            "hint": "他的不安和闪烁的眼神可能暗示他知道更多信息。"
+          }
+        ]
+      },
+      {
+        "id": "mdpqnhwzj5ke06620k",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "他说慌了继续追问",
+        "response": "我决定进一步追问艾米丽·沃森关于她手腕上伤痕的事情。我温和但坚定地指出，伤痕的形状与她所描述的情况不符。她显得更加紧张，眼神游移，最终承认那是在与死者最后一次见面时发生的争执中留下的。她坚称那只是一场误会，但她的语气和肢体语言让我觉得事情可能比她所说的要严重。",
+        "timestamp": "2025-07-30T09:03:21.203Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾米丽的伤痕",
+            "description": "艾米丽手腕上的伤痕与她的解释不符，实际上是在与死者的争执中留下的。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "在追问下承认手腕上的伤痕是在与死者的争执中留下的。",
+            "relationship": "目击者",
+            "hint": "可能与死者有不为人知的冲突。"
+          },
+          {
+            "name": "理查德·莫里森",
+            "context": "之前被描述为看起来不安，眼神闪烁，似乎在隐瞒什么。",
+            "relationship": "死者的同事",
+            "hint": "可能与案件有更深的联系。"
+          }
+        ]
+      },
+      {
+        "id": "mdpqodadzr8oyaof95k",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "继续追问这个人",
+        "response": "我继续以温和但坚定的态度追问艾米丽·沃森，试图了解更多关于她与死者之间争执的细节。我指出，如果这真的只是一场误会，那么详细说明情况将有助于澄清事实。她沉默了一会儿，然后低声说，死者曾对她提出了一些不当的要求，当她拒绝时，争执便发生了。这让我意识到，这起案件可能比最初看起来的要复杂。",
+        "timestamp": "2025-07-30T09:04:01.861Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾米丽与死者的争执",
+            "description": "艾米丽透露死者曾对她提出不当要求，导致争执。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "透露与死者的争执细节",
+            "relationship": "证人",
+            "hint": "可能掌握关键信息，但害怕进一步卷入案件"
+          },
+          {
+            "name": "理查德·莫里森",
+            "context": "死者的同事，之前显得不安",
+            "relationship": "可能的嫌疑人",
+            "hint": "他的不安可能与案件有关，需要进一步调查"
+          }
+        ]
+      },
+      {
+        "id": "mdpqp8d6o1e4c9iph7e",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "死者对他提出了什么要求",
+        "response": "艾米丽·沃森提到，死者曾对她提出了一些不当的要求，具体来说，是关于她继承的一笔不小的遗产。死者似乎对她的财务状况非常了解，并试图说服她投资一个他声称非常有前景的项目。当她表示怀疑并拒绝时，争执便发生了。",
+        "timestamp": "2025-07-30T09:04:42.138Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "遗产纠纷",
+            "description": "死者对艾米丽·沃森的遗产表现出异常的兴趣，并试图说服她投资一个未指明的项目。",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T09:04:42.139Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f0/20250730/1412f369/ac1adc1d-2f03-48dc-8111-8980d529a999-1.png?Expires=1753952706&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=vHAh8t%2BP%2BQG0UWDnLCrPAihWryw%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "遗产纠纷的受害者",
+            "relationship": "案件的关键证人",
+            "hint": "艾米丽·沃森可能掌握着解开案件的关键信息。"
+          }
+        ]
+      },
+      {
+        "id": "mdpquwl6knwmjktcxfd",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "她继承的遗产死者是怎么知道的",
+        "response": "艾米丽·沃森提到，死者似乎对她的财务状况非常了解，这可能意味着他们之间的关系比我们最初想象的要密切。或者，死者可能通过其他途径获取了这一信息。这确实是一个值得深入调查的点。",
+        "timestamp": "2025-07-30T09:09:06.810Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "死者的信息来源",
+            "description": "死者如何得知艾米丽·沃森的遗产信息，可能揭示他们之间更深层次的关系或其他信息渠道。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "被询问关于死者如何知道她继承的遗产",
+            "relationship": "案件的关键证人",
+            "hint": "艾米丽与死者之间可能存在未公开的财务往来或私人关系。"
+          }
+        ]
+      },
+      {
+        "id": "mdpqvu3658nc6bc4jbn",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "她的遗产是从那里继承的",
+        "response": "艾米丽·沃森继承的遗产来自她已故的姑妈，玛格丽特·沃森。玛格丽特是一位相当富有的女士，生前独居，与艾米丽关系颇为亲密。据艾米丽所述，玛格丽特姑妈在去世前几个月突然改变了遗嘱，将大部分财产留给了她，这一决定在当时引起了一些家族内的争议。",
+        "timestamp": "2025-07-30T09:09:50.226Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "玛格丽特·沃森的遗嘱变更",
+            "description": "玛格丽特·沃森在去世前几个月突然更改遗嘱，将大部分财产留给艾米丽·沃森，这一行为在家族内引起了争议。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "玛格丽特·沃森",
+            "context": "艾米丽·沃森的姑妈，已故，生前富有且独居。",
+            "relationship": "姑妈与侄女",
+            "hint": "玛格丽特·沃森的遗嘱变更可能是案件的关键线索之一。"
+          }
+        ]
+      },
+      {
+        "id": "mdpqxasghh475ngqpu9",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "古董收藏家和一个富有的家族应该有什么关系，继续调查",
+        "response": "古董收藏家与富有的家族之间可能存在多种关系。首先，古董收藏家可能本身就是家族的一员，或者与家族有商业往来。其次，家族可能拥有珍贵的古董，而收藏家则对这些古董表现出浓厚的兴趣。此外，收藏家可能试图通过接近家族成员来获取或购买这些古董。考虑到艾米丽·沃森继承的遗产中可能包含古董或其他贵重物品，这一点尤其值得关注。我们需要进一步调查艾米丽姑妈的收藏品，以及是否有古董收藏家与她或艾米丽有过接触。",
+        "timestamp": "2025-07-30T09:10:58.528Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "玛格丽特·沃森的收藏品",
+            "description": "玛格丽特·沃森生前可能拥有珍贵的古董或其他贵重物品，这些物品可能是遗产的一部分。",
+            "importance": "high"
+          },
+          {
+            "id": "clue_5",
+            "name": "古董收藏家的接触记录",
+            "description": "调查是否有古董收藏家近期与玛格丽特或艾米丽有过接触，尤其是在遗嘱更改前后。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T09:10:58.528Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "作为玛格丽特·沃森的侄女，继承了包括可能珍贵古董在内的遗产。",
+            "relationship": "朋友",
+            "hint": "艾米丽可能对姑妈的收藏品了解不多，或者有意隐瞒某些信息。"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "已故，生前为富有的女士，拥有可能的珍贵古董收藏。",
+            "relationship": "无直接关系",
+            "hint": "玛格丽特的遗嘱突然更改，可能与她的收藏品有关。"
+          }
+        ]
+      },
+      {
+        "id": "mdpr1g49oxqnmty7rfo",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "追问艾米莉他和死者的关系",
+        "response": "艾米丽·沃森与死者的关系确实令人好奇。据我所知，他们之间并非仅仅是简单的相识。艾米丽曾提到，死者对她的一些私人事务异常了解，这让我怀疑他们之间可能有更深的联系。或许，他们之间有过某种形式的合作，或者死者对艾米丽有着不为人知的兴趣。这一点，我们需要从艾米丽那里获取更多的信息来确认。",
+        "timestamp": "2025-07-30T09:14:12.057Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米丽与死者的关系",
+            "description": "艾米丽与死者之间可能存在不为人知的深层联系，需要进一步调查。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "与死者的关系调查",
+            "relationship": "调查对象",
+            "hint": "艾米丽可能隐藏了与死者关系的某些细节"
+          },
+          {
+            "name": "夏洛克·福尔摩斯",
+            "context": "调查助手",
+            "relationship": "朋友兼同事",
+            "hint": "福尔摩斯可能对艾米丽与死者的关系有独到见解"
+          }
+        ]
+      },
+      {
+        "id": "mdpr34ovtami754b1o9",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "追问艾米莉",
+        "response": "艾米丽·沃森与死者之间的关系确实值得深入探究。从我的观察来看，艾米丽似乎对死者的某些行为感到不安，尤其是在遗产继承的事情上。她提到过，死者在她姑妈去世前频繁拜访，这在她看来并不寻常。我认为，我们需要更详细地了解这些拜访的具体情况，以及死者与玛格丽特·沃森之间的互动。",
+        "timestamp": "2025-07-30T09:15:30.559Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "死者的频繁拜访",
+            "description": "死者曾在玛格丽特·沃森去世前频繁拜访她，这一行为引起了艾米丽的注意。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米丽·沃森",
+            "context": "艾米丽对死者的频繁拜访感到不安，认为这不寻常。",
+            "relationship": "朋友",
+            "hint": "艾米丽可能知道更多关于死者与玛格丽特·沃森之间关系的信息。"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "死者在她去世前频繁拜访她。",
+            "relationship": "姑妈",
+            "hint": "玛格丽特·沃森与死者之间可能有未公开的关系或交易。"
+          }
+        ]
+      },
+      {
+        "id": "mdpr4gd1lsodzcwa33h",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "继续调查",
+        "response": "在继续调查的过程中，我发现了一些值得注意的细节。首先，艾米丽·沃森的姑妈玛格丽特·沃森的收藏中确实有几件非常珍贵的古董，这些古董在市场上极为罕见。其次，我注意到有一位名叫理查德·莫里亚蒂的古董收藏家，在过去几个月里频繁出现在玛格丽特的社交圈中。这个人对玛格丽特的收藏表现出了异常的兴趣。我认为，我们需要进一步调查理查德·莫里亚蒂的背景，以及他与玛格丽特·沃森之间的具体互动。",
+        "timestamp": "2025-07-30T09:16:32.341Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "理查德·莫里亚蒂的频繁出现",
+            "description": "理查德·莫里亚蒂在过去几个月里频繁出现在玛格丽特·沃森的社交圈中，并对她的收藏表现出了异常的兴趣。",
+            "importance": "high"
+          },
+          {
+            "id": "clue_5",
+            "name": "玛格丽特·沃森的珍贵古董",
+            "description": "玛格丽特·沃森的收藏中包含几件在市场上极为罕见的珍贵古董。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "古董收藏家，频繁出现在玛格丽特·沃森的社交圈中",
+            "relationship": "可疑的第三方",
+            "hint": "对玛格丽特的收藏表现出了异常的兴趣，可能与案件有关"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "艾米丽·沃森的姑妈，已故",
+            "relationship": "死者",
+            "hint": "她的珍贵古董可能是案件的动机之一"
+          }
+        ]
+      },
+      {
+        "id": "mdpr5nsgd0ahxkhorgr",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "进一步调查理查德·莫里亚蒂的背景",
+        "response": "理查德·莫里亚蒂的背景调查揭示了一些有趣的细节。他不仅是一位知名的古董收藏家，还涉足多个国际古董交易网络。值得注意的是，他与玛格丽特·沃森的交往似乎不仅仅是社交性质的。有证据表明，他曾试图通过非正式渠道获取玛格丽特收藏中的几件特定古董。这种行为，结合他在古董界的声誉，值得我们深入探究。",
+        "timestamp": "2025-07-30T09:17:28.624Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "理查德·莫里亚蒂的古董交易网络",
+            "description": "理查德·莫里亚蒂参与的国际古董交易网络，可能与玛格丽特·沃森的收藏有关。",
+            "importance": "high"
+          },
+          {
+            "id": "clue_2",
+            "name": "特定古董的兴趣",
+            "description": "理查德·莫里亚蒂对玛格丽特收藏中的几件特定古董表现出异常兴趣。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-30T09:17:28.624Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "古董收藏家，与玛格丽特·沃森有交往",
+            "relationship": "调查对象",
+            "hint": "可能与玛格丽特·沃森的死亡有关"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "艾米丽·沃森的姑妈，古董收藏家",
+            "relationship": "死者",
+            "hint": "她的收藏可能是案件的关键"
+          }
+        ]
+      },
+      {
+        "id": "mdpr6m6ynnx2rcyqcx",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "继续调查这个人",
+        "response": "在深入调查理查德·莫里亚蒂的过程中，我发现他与一个名为'暗影'的国际古董走私网络有着不可告人的联系。这个网络专门从事稀有古董的非法交易，而莫里亚蒂似乎是其中的关键人物。更令人担忧的是，玛格丽特·沃森的几件珍贵古董恰好是这个网络近期寻找的目标。我认为，这不仅仅是巧合。",
+        "timestamp": "2025-07-30T09:18:13.210Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "暗影网络",
+            "description": "一个国际古董走私网络，与理查德·莫里亚蒂有密切联系。",
+            "importance": "high"
+          },
+          {
+            "id": "clue_5",
+            "name": "目标古董清单",
+            "description": "暗影网络近期寻找的稀有古董清单，包括玛格丽特·沃森收藏中的几件。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "约翰·华生",
+            "context": "可能需要他的帮助来进一步调查暗影网络。",
+            "relationship": "朋友兼助手",
+            "hint": "华生医生在军中的经历可能对调查国际网络有所帮助。"
+          },
+          {
+            "name": "暗影网络成员",
+            "context": "与理查德·莫里亚蒂有直接联系。",
+            "relationship": "敌对",
+            "hint": "这些成员可能隐藏在伦敦的上流社交圈中。"
+          }
+        ]
+      },
+      {
+        "id": "mdpr8o0g5urfulqiqdl",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "那位中年男子是理查德·莫里森调查一下他，他是不是就是理查德莫里亚蒂",
+        "response": "经过进一步的调查，我发现那位中年男子确实是理查德·莫里亚蒂。他使用'莫里森'作为化名，可能是为了掩盖其真实身份和活动。他在古董界的活动与其化名下的行为模式高度吻合，特别是在涉及玛格丽特·沃森珍贵古董的交易上。",
+        "timestamp": "2025-07-30T09:19:48.880Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "理查德·莫里亚蒂的化名",
+            "description": "理查德·莫里亚蒂使用'莫里森'作为化名进行活动，特别是在与玛格丽特·沃森的交往中。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "使用化名'莫里森'进行古董交易活动",
+            "relationship": "调查对象",
+            "hint": "可能与'暗影'网络有更深的联系"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "理查德·莫里亚蒂的目标之一",
+            "relationship": "受害者",
+            "hint": "她的珍贵古董可能是'暗影'网络的目标"
+          }
+        ]
+      },
+      {
+        "id": "mdpr9l20z5mihwkp8e",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "他为什么不安",
+        "response": "理查德·莫里亚蒂之所以不安，可能是因为他意识到自己的真实身份和与'暗影'网络的联系即将被揭露。他使用化名'莫里森'进行活动，显然是为了掩盖这些不法行为。现在，随着调查的深入，他可能感到压力增大，担心自己的秘密会被完全曝光。",
+        "timestamp": "2025-07-30T09:20:31.704Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "莫里亚蒂的压力源",
+            "description": "理查德·莫里亚蒂因调查接近真相而感到不安，这表明他可能有更多未揭露的秘密。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "玛格丽特·沃森",
+            "context": "莫里亚蒂试图通过非正式渠道获取她的珍贵古董。",
+            "relationship": "潜在受害者",
+            "hint": "玛格丽特·沃森的收藏中可能有更多与'暗影'网络相关的目标。"
+          },
+          {
+            "name": "夏洛克·福尔摩斯",
+            "context": "作为调查的主要推动者，福尔摩斯的存在加剧了莫里亚蒂的不安。",
+            "relationship": "朋友兼搭档",
+            "hint": "福尔摩斯可能已经掌握了更多关于莫里亚蒂的信息。"
+          }
+        ]
+      },
+      {
+        "id": "mdprav43ko2ywb87aim",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "他为什么会接触死者",
+        "response": "理查德·莫里亚蒂接触死者的原因，很可能与'暗影'网络寻找的珍贵古董有关。死者玛格丽特·沃森拥有的几件古董正是这个网络近期迫切需要的目标。莫里亚蒂可能试图通过某种方式获取这些古董，无论是通过购买、欺骗还是更极端的手段。",
+        "timestamp": "2025-07-30T09:21:31.395Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "玛格丽特·沃森的古董清单",
+            "description": "一份详细列出玛格丽特·沃森拥有的珍贵古董的清单，其中几件被标记为'暗影'网络特别感兴趣的物品。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "玛格丽特·沃森",
+            "context": "死者，拥有被'暗影'网络觊觎的珍贵古董。",
+            "relationship": "无直接关系，但案件的关键人物。",
+            "hint": "她的死亡可能与古董的非法交易有关。"
+          },
+          {
+            "name": "夏洛克·福尔摩斯",
+            "context": "正在协助调查此案。",
+            "relationship": "挚友和搭档",
+            "hint": "他可能已经注意到了古董清单的重要性。"
+          }
+        ]
+      },
+      {
+        "id": "mdprbubg9f60sx1t36",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "理查德·莫里亚蒂和艾米利认识吗",
+        "response": "根据我的调查和观察，理查德·莫里亚蒂和艾米利确实有过接触。艾米利是玛格丽特·沃森的侄女，也是她古董收藏的继承人之一。莫里亚蒂可能试图通过艾米利来接近那些珍贵的古董。",
+        "timestamp": "2025-07-30T09:22:17.020Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米利与莫里亚蒂的联系",
+            "description": "艾米利作为玛格丽特·沃森的侄女，与理查德·莫里亚蒂有过接触，可能是莫里亚蒂试图获取古董的途径之一。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米利",
+            "context": "玛格丽特·沃森的侄女，古董收藏的继承人之一。",
+            "relationship": "继承人与被继承人的关系",
+            "hint": "艾米利可能对莫里亚蒂的真实意图一无所知。"
+          },
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "使用化名'莫里森'进行活动，与'暗影'网络有关联。",
+            "relationship": "嫌疑人",
+            "hint": "莫里亚蒂可能利用艾米利的无知来达到自己的目的。"
+          }
+        ]
+      },
+      {
+        "id": "mdprdbauq5gwutahglo",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "仔细调查一下理查德·莫里亚蒂和艾米莉有哪些基础",
+        "response": "经过进一步的调查，我发现理查德·莫里亚蒂和艾米利之间的联系比最初想象的更为复杂。他们不仅因为玛格丽特·沃森的古董而有所接触，而且还有证据表明，他们曾在同一社交圈中活动。艾米利可能无意中成为了莫里亚蒂计划的一部分，而她自己并未完全意识到这一点。",
+        "timestamp": "2025-07-30T09:23:25.686Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "社交圈交集",
+            "description": "理查德·莫里亚蒂和艾米利曾在同一社交活动中出现，这表明他们的接触可能不仅限于古董交易。",
+            "importance": "medium"
+          },
+          {
+            "id": "clue_2",
+            "name": "艾米利的 unawareness",
+            "description": "艾米利似乎没有意识到自己可能被利用作为接近古董的媒介。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米利",
+            "context": "作为玛格丽特·沃森的侄女和古董继承人，与理查德·莫里亚蒂有过接触。",
+            "relationship": "潜在的被利用者",
+            "hint": "艾米利可能掌握着关键信息，但她自己尚未意识到。"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "已故，古董的原所有者。",
+            "relationship": "案件的关键人物",
+            "hint": "她的古董收藏可能是整个案件的核心。"
+          }
+        ]
+      },
+      {
+        "id": "mdpre884fmq9vgn8j2u",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "什么计划",
+        "response": "理查德·莫里亚蒂的计划涉及利用艾米利作为中介，以获取玛格丽特·沃森的古董。他可能策划了一系列复杂的交易或欺骗手段，目的是在不引起怀疑的情况下，将这些古董转移到'暗影'网络的手中。艾米利的不经意参与，使得这一计划更加隐蔽。",
+        "timestamp": "2025-07-30T09:24:08.356Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米利的社交活动记录",
+            "description": "记录显示艾米利与理查德·莫里亚蒂在多个社交场合有过交集，这些场合大多与古董展览或拍卖会有关。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米利",
+            "context": "作为玛格丽特·沃森的侄女和古董继承人，无意中成为莫里亚蒂计划的一部分。",
+            "relationship": "潜在受害者",
+            "hint": "艾米利可能对莫里亚蒂的真实意图一无所知。"
+          },
+          {
+            "name": "玛格丽特·沃森",
+            "context": "已故的古董收藏家，其收藏品是'暗影'网络的目标。",
+            "relationship": "死者",
+            "hint": "她的古董收藏中可能藏有对'暗影'网络极为重要的物品。"
+          }
+        ]
+      },
+      {
+        "id": "mdprf4c2ienwp8690m",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "你还能调查出什么",
+        "response": "我的调查揭示了一些新的线索，理查德·莫里亚蒂的计划可能不仅仅局限于古董的转移。我发现他最近与一位名为'维克多·斯通'的人物有过频繁的接触，这位人物在艺术品黑市上有着不小的名声。此外，艾米利的手机记录显示，她最近收到了一些来自未知号码的加密信息，这可能是莫里亚蒂用来操控她的另一种方式。",
+        "timestamp": "2025-07-30T09:24:49.970Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "维克多·斯通的联系",
+            "description": "理查德·莫里亚蒂与维克多·斯通在艺术品黑市上的联系",
+            "importance": "high"
+          },
+          {
+            "id": "clue_5",
+            "name": "加密信息",
+            "description": "艾米利手机中来自未知号码的加密信息",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "维克多·斯通",
+            "context": "艺术品黑市上的知名人物，与理查德·莫里亚蒂有接触",
+            "relationship": "潜在的共犯",
+            "hint": "可能与莫里亚蒂的计划有更深的联系"
+          },
+          {
+            "name": "艾米利",
+            "context": "收到加密信息，可能被莫里亚蒂操控",
+            "relationship": "无意中的参与者",
+            "hint": "她的角色可能比目前所知的更为关键"
+          }
+        ]
+      },
+      {
+        "id": "mdprh1tl3ob6lgbicw2",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "维克多·斯通是谁",
+        "response": "维克多·斯通，一个在艺术品黑市上声名狼藉的人物。我的调查显示，他与理查德·莫里亚蒂有着不寻常的联系。斯通以其精湛的伪造技术和在非法艺术品交易中的广泛网络而闻名。他可能是莫里亚蒂计划中的关键一环，负责将那些古董转化为难以追踪的资产。",
+        "timestamp": "2025-07-30T09:26:20.025Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "维克多·斯通的联系",
+            "description": "维克多·斯通与理查德·莫里亚蒂的频繁接触，暗示他在莫里亚蒂的计划中扮演重要角色。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "与维克多·斯通的联系",
+            "relationship": "调查对象",
+            "hint": "莫里亚蒂可能利用斯通的专业技能来进一步其非法计划。"
+          },
+          {
+            "name": "艾米利",
+            "context": "可能被莫里亚蒂利用",
+            "relationship": "无意中的中介",
+            "hint": "艾米利的不经意参与使得莫里亚蒂的计划更加隐蔽。"
+          }
+        ]
+      },
+      {
+        "id": "mdprht3imx33wbbys1",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "维克多·斯通与死者是什么关系",
+        "response": "根据我的调查，维克多·斯通与死者之间似乎没有直接的联系。然而，考虑到斯通在艺术品黑市的活动和莫里亚蒂的计划，死者可能无意中成为了他们计划的一部分。死者的身份和背景仍在调查中，但初步看来，他可能是一个被利用的无辜者。",
+        "timestamp": "2025-07-30T09:26:55.374Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "死者的背景调查",
+            "description": "进一步调查死者的身份和背景，以确定他与维克多·斯通或理查德·莫里亚蒂之间是否存在任何隐藏的联系。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "作为维克多·斯通的联系人，可能在死者案件中扮演关键角色。",
+            "relationship": "调查对象",
+            "hint": "莫里亚蒂的计划可能比目前所知的更为复杂，涉及更多未知的参与者。"
+          }
+        ]
+      },
+      {
+        "id": "mdpriqcbfefdl6tmp9k",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "仔细调查死者的身份",
+        "response": "经过仔细的调查，我发现死者名为亨利·沃森，一位看似普通的银行职员，但他在过去几个月里频繁访问了几家古董店和艺术画廊。这些地方与维克多·斯通的活动区域有重叠。此外，沃森的银行账户显示有几笔不寻常的大额交易，这些交易的时间与莫里亚蒂和斯通的会面时间吻合。",
+        "timestamp": "2025-07-30T09:27:38.459Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "亨利·沃森的银行交易记录",
+            "description": "显示有几笔不寻常的大额交易，时间与莫里亚蒂和斯通的会面时间吻合。",
+            "importance": "high"
+          },
+          {
+            "id": "clue_5",
+            "name": "亨利·沃森的访问记录",
+            "description": "过去几个月里频繁访问了几家古董店和艺术画廊，这些地方与维克多·斯通的活动区域有重叠。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "维克多·斯通",
+            "context": "与亨利·沃森的访问记录和银行交易有关联",
+            "relationship": "嫌疑人",
+            "hint": "可能在利用亨利·沃森进行非法艺术品交易"
+          },
+          {
+            "name": "理查德·莫里亚蒂",
+            "context": "与维克多·斯通的会面时间与亨利·沃森的银行交易时间吻合",
+            "relationship": "主要嫌疑人",
+            "hint": "可能在幕后操控整个计划"
+          }
+        ]
+      },
+      {
+        "id": "mdprjzzz9wg9jjie3uo",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "他和艾米莉都叫沃森他们是一家人",
+        "response": "有趣的问题。亨利·沃森和艾米莉·沃森确实共享同一个姓氏，但这并不自动意味着他们是家人。在我的调查中，尚未发现他们之间有直接的家庭关系。然而，这个巧合值得进一步探究。艾米莉·沃森是一位知名的艺术品收藏家，她的活动范围与维克多·斯通有所重叠。这可能是连接点。",
+        "timestamp": "2025-07-30T09:28:37.631Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米莉·沃森的艺术品收藏",
+            "description": "艾米莉·沃森的艺术品收藏中可能包含与维克多·斯通伪造的艺术品相似的物品。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "艺术品收藏家，与亨利·沃森共享姓氏",
+            "relationship": "潜在的联系人",
+            "hint": "她的艺术品收藏可能与案件有关"
+          },
+          {
+            "name": "维克多·斯通",
+            "context": "艺术品伪造者，与案件有关",
+            "relationship": "嫌疑人",
+            "hint": "可能与艾米莉·沃森的艺术品收藏有交集"
+          }
+        ]
+      },
+      {
+        "id": "mdprkxnmnoj5vfzxw1",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "艾米莉不是图书管理员吗",
+        "response": "据我所知，艾米莉·沃森确实在公共图书馆担任图书管理员的职位，但这并不妨碍她同时是一位艺术品收藏家。这种双重身份在表面上看似矛盾，但实际上，它为她的艺术品收藏活动提供了完美的掩护。图书馆的工作让她能够接触到各种稀有书籍和文献，这些往往与艺术品黑市有着不为人知的联系。",
+        "timestamp": "2025-07-30T09:29:21.250Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米莉·沃森的双重身份",
+            "description": "艾米莉·沃森既是图书管理员又是艺术品收藏家，这种双重身份可能与她参与的艺术品黑市活动有关。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "作为图书管理员和艺术品收藏家的双重身份",
+            "relationship": "调查对象",
+            "hint": "她的双重身份可能隐藏着与案件相关的关键线索。"
+          },
+          {
+            "name": "维克多·斯通",
+            "context": "与艾米莉·沃森在艺术品黑市的活动区域重叠",
+            "relationship": "嫌疑人",
+            "hint": "维克多·斯通与艾米莉·沃森之间可能存在某种联系，需要进一步调查。"
+          }
+        ]
+      },
+      {
+        "id": "mdprmdw3n9sx3le7fm",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "莱斯特警长是谁",
+        "response": "莱斯特警长是苏格兰场的一位资深警官，我们有过几次合作。他以严谨的工作态度和对细节的关注而闻名。尽管我们的方法有时不同，但我尊重他的专业能力。",
+        "timestamp": "2025-07-30T09:30:28.947Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "莱斯特警长的合作记录",
+            "description": "莱斯特警长与福尔摩斯在过去的案件中曾有合作，这些案件多涉及复杂的艺术品盗窃和伪造。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "莱斯特警长",
+            "context": "作为苏格兰场的资深警官，与福尔摩斯有过合作。",
+            "relationship": "同事",
+            "hint": "莱斯特警长可能掌握着与当前案件相关的未公开信息。"
+          }
+        ]
+      },
+      {
+        "id": "mdps6dkkigsvgyp03qe",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "死者和那些角色来往密切",
+        "response": "根据我的调查，死者与艾米莉·沃森和维克多·斯通来往密切。艾米莉·沃森，如前所述，既是图书管理员也是艺术品收藏家，而维克多·斯通则是一位有争议的艺术品经销商。他们的关系网复杂，且与死者有着不寻常的财务往来。",
+        "timestamp": "2025-07-30T09:46:01.652Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "财务往来记录",
+            "description": "死者与艾米莉·沃森和维克多·斯通之间的不寻常财务交易记录。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "与死者有密切来往，涉及艺术品收藏和财务交易。",
+            "relationship": "调查对象",
+            "hint": "她的双重身份可能隐藏着更多秘密。"
+          },
+          {
+            "name": "维克多·斯通",
+            "context": "艺术品经销商，与死者有财务往来。",
+            "relationship": "调查对象",
+            "hint": "他的艺术品交易可能涉及非法活动。"
+          }
+        ]
+      },
+      {
+        "id": "mdps8prkhaa6hb8hh5q",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "死者和艾米莉是夫妻关系把，他们的情感怎么样",
+        "response": "关于死者和艾米莉·沃森的关系，我的调查显示他们并非夫妻。然而，他们之间的关系确实超出了普通的商业往来。艾米莉对死者有着复杂的情感，这种情感可能源于他们在艺术品交易中的深度合作。至于具体的情感状态，艾米莉表现得极为克制，这让我怀疑她可能隐藏了更多信息。",
+        "timestamp": "2025-07-30T09:47:50.768Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米莉的情感克制",
+            "description": "艾米莉在提及死者时表现出不寻常的情感克制，可能隐藏重要信息。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "与死者的非夫妻但复杂的关系",
+            "relationship": "艺术品交易伙伴",
+            "hint": "艾米莉可能对死者的死亡知道得比表面上更多。"
+          },
+          {
+            "name": "维克多·斯通",
+            "context": "与死者和艾米莉都有密切往来",
+            "relationship": "艺术品经销商",
+            "hint": "维克多·斯通在死者与艾米莉的关系中可能扮演了关键角色。"
+          }
+        ]
+      },
+      {
+        "id": "mdpsagya0vacbztoohp",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "他们的感情是什么样的",
+        "response": "艾米莉·沃森与死者之间的关系颇为复杂，表面上看似仅是商业伙伴，但我的观察告诉我，这其中隐藏着更深层次的情感纠葛。艾米莉在提及死者时，总是刻意保持距离，这种克制反而暴露了她内心的波动。至于具体的情感状态，我认为艾米莉可能对死者抱有未说出口的感情，或是某种愧疚。",
+        "timestamp": "2025-07-30T09:49:12.658Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "艾米莉的情感波动",
+            "description": "艾米莉在提及死者时表现出异常的克制，可能隐藏着更深的情感或秘密。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "与死者的复杂关系",
+            "relationship": "商业伙伴及可能的更深层次关系",
+            "hint": "艾米莉可能对死者抱有未说出口的感情或愧疚"
+          },
+          {
+            "name": "维克多·斯通",
+            "context": "与死者有密切来往",
+            "relationship": "艺术品经销商",
+            "hint": "维克多与死者的财务往来异常，可能涉及不法交易"
+          }
+        ]
+      },
+      {
+        "id": "mdpscwlk0hnnicea6tz5",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "你认识艾米莉吗",
+        "response": "Indeed, I have had the occasion to make the acquaintance of Miss Emily Watson in the course of my investigations. Her involvement in the art world and her connections to the deceased have made her a person of interest in this case.",
+        "timestamp": "2025-07-30T09:51:06.248Z",
+        "newClues": [
+          {
+            "id": "clue_4",
+            "name": "Emily Watson's Art Collection",
+            "description": "Emily Watson possesses an extensive collection of artworks, some of which are of questionable provenance and may be linked to the deceased.",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "Emily Watson",
+            "context": "Acquaintance through the investigation, linked to the deceased via the art world.",
+            "relationship": "person of interest",
+            "hint": "Her art collection may hold the key to understanding her relationship with the deceased."
+          },
+          {
+            "name": "Victor Stone",
+            "context": "Previously mentioned as a controversial art dealer connected to the deceased.",
+            "relationship": "associate",
+            "hint": "His dealings with both the deceased and Emily Watson warrant further scrutiny."
+          }
+        ]
+      },
+      {
+        "id": "mdpse43q9gsk02cln2b",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "中文",
+        "response": "在我的调查过程中，我确实与艾米莉·沃森有过接触。她在艺术品交易界的地位不容小觑，而她与死者之间的复杂关系更是引起了我的极大兴趣。",
+        "timestamp": "2025-07-30T09:52:02.630Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾米莉与死者的通信",
+            "description": "一系列未公开的信件，显示了两人之间不寻常的交流",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾米莉·沃森",
+            "context": "与死者的关系及在案件中的角色",
+            "relationship": "案件相关人物",
+            "hint": "艾米莉可能掌握着解开案件的关键信息"
+          }
+        ]
+      },
+      {
+        "id": "mdpsq1qdiz8bgbumywn",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "艾琳·艾德勒你认识吗",
+        "response": "艾琳·艾德勒，确实，我对她有所了解。她是一位极其聪明且机智的女性，曾在某些事件中展现出非凡的才能。她的名字在我的一些案件中偶尔出现，虽然我们之间的交集不多，但每一次都令人难忘。",
+        "timestamp": "2025-07-30T10:01:19.429Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾琳·艾德勒的档案",
+            "description": "艾琳·艾德勒与福尔摩斯之间有过交集，她可能掌握某些关键信息。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾琳·艾德勒",
+            "context": "提及艾琳·艾德勒与福尔摩斯的过往交集",
+            "relationship": "过去的对手，现在的某种意义上的盟友",
+            "hint": "艾琳·艾德勒可能知道更多关于当前案件的信息"
+          }
+        ]
+      },
+      {
+        "id": "mdpsulv3werdbbrr8k",
+        "characterId": "char1",
+        "character": "约翰·华生",
+        "question": "你知道艾琳·艾德勒吗？",
+        "response": "艾琳·艾德勒，确实，我对她有所了解。她是一位极其聪明且机智的女性，曾在某些事件中展现出非凡的才能。她的名字在我的一些案件中偶尔出现，虽然我们之间的交集不多，但每一次都令人难忘。",
+        "timestamp": "2025-07-30T10:04:52.143Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾琳·艾德勒的才智",
+            "description": "艾琳·艾德勒展现出非凡的聪明才智，可能与当前案件有关。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾琳·艾德勒",
+            "context": "提及她在案件中的出现和才智",
+            "relationship": "熟人",
+            "hint": "艾琳·艾德勒可能与当前案件有某种联系。"
+          },
+          {
+            "name": "夏洛克·福尔摩斯",
+            "context": "作为华生的朋友和搭档，可能对艾琳·艾德勒有更多了解",
+            "relationship": "朋友和搭档",
+            "hint": "福尔摩斯可能与艾琳·艾德勒有过更多的交集。"
+          }
+        ]
+      },
+      {
+        "id": "mdpt2jshuerazf27lmm",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "艾琳艾德勒喜欢歌剧吗",
+        "response": "艾琳·艾德勒对歌剧有着浓厚的兴趣，尤其是莫扎特的作品。她的品味相当高雅，这一点在她选择的娱乐活动中表现得淋漓尽致。",
+        "timestamp": "2025-07-30T10:11:02.705Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "艾琳·艾德勒的歌剧兴趣",
+            "description": "艾琳·艾德勒特别喜欢莫扎特的歌剧，这可能与她高雅的品味和复杂的性格有关。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "艾琳·艾德勒",
+            "context": "讨论她对歌剧的兴趣",
+            "relationship": "曾经的对手，现在的关系复杂",
+            "hint": "她的兴趣和活动可能揭示她当前的行踪或意图"
+          }
+        ]
+      },
+      {
+        "id": "mdpt92293fc0fl49h95",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "詹姆斯·莫里亚蒂他是威胁吗",
+        "response": "詹姆斯·莫里亚蒂教授，确实是一个不容忽视的威胁。他的智慧与我在伯仲之间，但他的道德观却与常人截然不同。他组织了一个庞大的犯罪网络，其影响力遍布整个伦敦，甚至更远。我必须承认，他是我职业生涯中遇到的最为棘手的对手。",
+        "timestamp": "2025-07-30T10:16:06.321Z",
+        "newClues": [
+          {
+            "id": "clue_001",
+            "name": "莫里亚蒂的犯罪网络",
+            "description": "一个遍布伦敦乃至国际的犯罪组织，涉及多种非法活动。",
+            "importance": "high",
+            "discoveredAt": "2025-07-30T10:16:06.321Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8f/20250730/1412f369/30bf7922-48e0-4048-b888-0345797641cf-1.png?Expires=1753956990&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=T0etVY3BH8jSfMMriNPlS4mLZoo%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "约翰·华生",
+            "context": "在讨论莫里亚蒂的威胁时，华生医生作为我的密友和助手，经常参与相关调查。",
+            "relationship": "朋友兼助手",
+            "hint": "华生医生可能掌握更多关于莫里亚蒂的信息。"
+          }
+        ]
+      },
+      {
+        "id": "mdptb80ayv9luuc72w",
+        "characterId": "char2",
+        "character": "夏洛克·福尔摩斯",
+        "question": "他是犯罪组织的人吗",
+        "response": "詹姆斯·莫里亚蒂教授不仅是犯罪组织的一员，他实际上是那个组织的首脑。他的智慧和策略使他能够操控一个遍布伦敦乃至更广范围的犯罪网络。他的存在对社会的安全构成了极大的威胁。",
+        "timestamp": "2025-07-30T10:17:47.338Z",
+        "newClues": [
+          {
+            "id": "clue_001",
+            "name": "莫里亚蒂的犯罪网络",
+            "description": "一个由詹姆斯·莫里亚蒂教授操控的庞大犯罪组织，涉及多种非法活动。",
+            "importance": "high"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "詹姆斯·莫里亚蒂",
+            "context": "作为犯罪组织的首脑被提及",
+            "relationship": "对手",
+            "hint": "莫里亚蒂的犯罪活动可能比已知的更为广泛和复杂。"
+          },
+          {
+            "name": "约翰·华生",
+            "context": "作为福尔摩斯的助手和朋友",
+            "relationship": "朋友",
+            "hint": "华生医生可能掌握更多关于莫里亚蒂的信息。"
+          }
+        ]
+      }
+    ],
+    "suspicionLevels": {
+      "char1": 100,
+      "char2": 100,
+      "char3": 50,
+      "char4": 70,
+      "char5": 30
+    },
+    "availableCharacters": [
+      "char1",
+      "char2",
+      "char3",
+      "char4"
+    ],
+    "discoveredCharacters": [
+      {
+        "characterId": "char3",
+        "discoveredAt": "2025-07-30T10:11:02.706Z",
+        "discoveredThrough": "讨论她对歌剧的兴趣",
+        "mentionedBy": "曾经的对手，现在的关系复杂"
+      },
+      {
+        "characterId": "char4",
+        "discoveredAt": "2025-07-30T10:17:47.339Z",
+        "discoveredThrough": "作为犯罪组织的首脑被提及",
+        "mentionedBy": "对手"
+      }
+    ],
+    "startTime": "2025-07-29T15:58:17.124Z",
+    "reasoning": {
+      "reasoning": "他是犯罪嫌疑人",
+      "killer": "詹姆斯·莫里亚蒂",
+      "submittedAt": "2025-07-30T10:19:40.523Z"
+    },
+    "validation": {
+      "correct": false,
+      "accuracy": 30,
+      "feedback": "用户的推理与案件真相不符。用户指认的凶手詹姆斯·莫里亚蒂并非真正的凶手，且推理过程过于简单，缺乏深入的证据支持。已发现的线索中，虽然有与莫里亚蒂相关的信息，但直接指向艾琳·艾德勒的证据更为充分。",
+      "suggestions": [
+        "深入分析每个线索与嫌疑人之间的关联性。",
+        "考虑所有嫌疑人的动机和机会，而不仅仅是表面上的嫌疑。"
+      ],
+      "score": 30,
+      "correctKiller": "艾琳·艾德勒",
+      "analysis": {
+        "factAccuracy": 40,
+        "logicCompleteness": 20,
+        "evidenceStrength": 30
+      }
+    },
+    "endTime": "2025-07-30T10:19:53.273Z"
+  },
+  "createdAt": "2025-07-29T15:58:17.125Z",
+  "updatedAt": "2025-07-30T10:19:53.276Z"
+}

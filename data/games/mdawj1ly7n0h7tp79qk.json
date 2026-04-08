@@ -1,0 +1,648 @@
+{
+  "id": "mdawj1ly7n0h7tp79qk",
+  "config": {
+    "gameType": "classic",
+    "gameStyle": "noir",
+    "customPrompt": "密室杀人，感情纠纷"
+  },
+  "script": {
+    "title": "密室中的背叛",
+    "background": "在一个看似平静的夜晚，著名作家山本健太郎被发现死在自己的书房内，房间从内部反锁，形成完美的密室。死者生前正在撰写一部揭露社会黑暗面的小说，书中涉及多人的秘密。",
+    "location": "山本健太郎的私人书房，位于东京市中心的高级公寓内",
+    "initialCharacters": [
+      {
+        "id": "char1",
+        "name": "佐藤美咲",
+        "age": 28,
+        "role": "witness",
+        "personality": "温柔但有些内向，对山本健太郎有着深厚的感情",
+        "background": "山本健太郎的私人助理，负责他的日常事务和手稿整理",
+        "appearance": "中等身材，黑色长发，常穿着简约的办公室服装",
+        "relationships": {
+          "char2": "未婚夫",
+          "char3": "前男友"
+        },
+        "secrets": [
+          "她与山本健太郎有过一段不为人知的恋情"
+        ],
+        "alibi": "案发时在家中，有邻居作证",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "田中浩",
+        "age": 35,
+        "role": "witness",
+        "personality": "自信且有些控制欲，对美咲非常关心",
+        "background": "成功的商人，美咲的未婚夫",
+        "appearance": "高大，西装革履，给人一种精英的感觉",
+        "relationships": {
+          "char1": "未婚妻"
+        },
+        "secrets": [
+          "他曾经因为商业欺诈被山本健太郎揭露"
+        ],
+        "alibi": "案发时在海外出差，有航班记录",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      }
+    ],
+    "hiddenCharacters": [
+      {
+        "id": "char3",
+        "name": "小林直人",
+        "age": 30,
+        "role": "suspect",
+        "personality": "冲动且易怒，对美咲念念不忘",
+        "background": "美咲的前男友，现在是一名自由摄影师",
+        "appearance": "瘦高，常穿着休闲装，头发略显凌乱",
+        "relationships": {
+          "char1": "前女友"
+        },
+        "secrets": [
+          "他曾威胁过山本健太郎，因为认为山本抢走了美咲"
+        ],
+        "alibi": "无法提供确切的不在场证明",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "前男友",
+          "威胁"
+        ],
+        "discoveryHints": "在调查美咲的过去时，可以从小林直人那里获得线索"
+      },
+      {
+        "id": "char4",
+        "name": "高桥真理子",
+        "age": 45,
+        "role": "suspect",
+        "personality": "冷静且计算，隐藏着深深的怨恨",
+        "background": "山本健太郎的前妻，现在是一名成功的律师",
+        "appearance": "优雅的中年女性，总是穿着职业套装",
+        "relationships": {
+          "char1": "前夫"
+        },
+        "secrets": [
+          "她因为山本健太郎的揭露而失去了重要的客户"
+        ],
+        "alibi": "案发时声称在家，但无人作证",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "前妻",
+          "揭露"
+        ],
+        "discoveryHints": "通过调查山本健太郎的离婚记录，可以找到高桥真理子"
+      },
+      {
+        "id": "char5",
+        "name": "渡边修",
+        "age": 50,
+        "role": "suspect",
+        "personality": "沉默寡言，内心充满愤怒",
+        "background": "山本健太郎的编辑，负责他的所有作品",
+        "appearance": "中等身材，常穿着深色西装，给人一种严肃的感觉",
+        "relationships": {
+          "char1": "同事"
+        },
+        "secrets": [
+          "他因为山本健太郎的新书内容而感到被背叛"
+        ],
+        "alibi": "案发时在办公室加班，有监控记录",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "编辑",
+          "新书"
+        ],
+        "discoveryHints": "通过调查山本健太郎的新书内容，可以找到渡边修的线索"
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue1",
+        "name": "反锁的门",
+        "description": "书房的门从内部被反锁，没有外力破坏的痕迹",
+        "location": "书房门口",
+        "importance": "high",
+        "relatedCharacters": [],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue2",
+        "name": "未完成的手稿",
+        "description": "山本健太郎正在撰写的新书手稿，内容涉及多人的秘密",
+        "location": "书房书桌",
+        "importance": "high",
+        "relatedCharacters": [
+          "char5"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue3",
+        "name": "威胁信",
+        "description": "一封未署名的威胁信，警告山本健太郎停止写作",
+        "location": "书房抽屉",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char3"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue4",
+        "name": "离婚协议",
+        "description": "山本健太郎与高桥真理子的离婚协议，显示有财产纠纷",
+        "location": "书房文件柜",
+        "importance": "medium",
+        "relatedCharacters": [
+          "char4"
+        ],
+        "discoveredAt": null
+      },
+      {
+        "id": "clue5",
+        "name": "商业欺诈文件",
+        "description": "一份揭露田中浩商业欺诈的文件",
+        "location": "书房保险箱",
+        "importance": "high",
+        "relatedCharacters": [
+          "char2"
+        ],
+        "discoveredAt": null
+      }
+    ],
+    "truth": {
+      "killer": "高桥真理子",
+      "method": "利用书房内的隐藏通道进入，制造密室假象",
+      "motive": "报复山本健太郎揭露她的秘密，导致她失去重要客户",
+      "timeline": "高桥真理子在案发前一周发现了书房的隐藏通道，案发当晚潜入书房，杀害山本健太郎后从通道离开，反锁房门制造密室"
+    },
+    "characters": [
+      {
+        "id": "char1",
+        "name": "佐藤美咲",
+        "age": 28,
+        "role": "witness",
+        "personality": "温柔但有些内向，对山本健太郎有着深厚的感情",
+        "background": "山本健太郎的私人助理，负责他的日常事务和手稿整理",
+        "appearance": "中等身材，黑色长发，常穿着简约的办公室服装",
+        "relationships": {
+          "char2": "未婚夫",
+          "char3": "前男友"
+        },
+        "secrets": [
+          "她与山本健太郎有过一段不为人知的恋情"
+        ],
+        "alibi": "案发时在家中，有邻居作证",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char2",
+        "name": "田中浩",
+        "age": 35,
+        "role": "witness",
+        "personality": "自信且有些控制欲，对美咲非常关心",
+        "background": "成功的商人，美咲的未婚夫",
+        "appearance": "高大，西装革履，给人一种精英的感觉",
+        "relationships": {
+          "char1": "未婚妻"
+        },
+        "secrets": [
+          "他曾经因为商业欺诈被山本健太郎揭露"
+        ],
+        "alibi": "案发时在海外出差，有航班记录",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": true
+      },
+      {
+        "id": "char3",
+        "name": "小林直人",
+        "age": 30,
+        "role": "suspect",
+        "personality": "冲动且易怒，对美咲念念不忘",
+        "background": "美咲的前男友，现在是一名自由摄影师",
+        "appearance": "瘦高，常穿着休闲装，头发略显凌乱",
+        "relationships": {
+          "char1": "前女友"
+        },
+        "secrets": [
+          "他曾威胁过山本健太郎，因为认为山本抢走了美咲"
+        ],
+        "alibi": "无法提供确切的不在场证明",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "前男友",
+          "威胁"
+        ],
+        "discoveryHints": "在调查美咲的过去时，可以从小林直人那里获得线索"
+      },
+      {
+        "id": "char4",
+        "name": "高桥真理子",
+        "age": 45,
+        "role": "suspect",
+        "personality": "冷静且计算，隐藏着深深的怨恨",
+        "background": "山本健太郎的前妻，现在是一名成功的律师",
+        "appearance": "优雅的中年女性，总是穿着职业套装",
+        "relationships": {
+          "char1": "前夫"
+        },
+        "secrets": [
+          "她因为山本健太郎的揭露而失去了重要的客户"
+        ],
+        "alibi": "案发时声称在家，但无人作证",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "前妻",
+          "揭露"
+        ],
+        "discoveryHints": "通过调查山本健太郎的离婚记录，可以找到高桥真理子"
+      },
+      {
+        "id": "char5",
+        "name": "渡边修",
+        "age": 50,
+        "role": "suspect",
+        "personality": "沉默寡言，内心充满愤怒",
+        "background": "山本健太郎的编辑，负责他的所有作品",
+        "appearance": "中等身材，常穿着深色西装，给人一种严肃的感觉",
+        "relationships": {
+          "char1": "同事"
+        },
+        "secrets": [
+          "他因为山本健太郎的新书内容而感到被背叛"
+        ],
+        "alibi": "案发时在办公室加班，有监控记录",
+        "suspicionLevel": 0,
+        "isInitiallyAvailable": false,
+        "mentionTriggers": [
+          "编辑",
+          "新书"
+        ],
+        "discoveryHints": "通过调查山本健太郎的新书内容，可以找到渡边修的线索"
+      }
+    ]
+  },
+  "reasoningChain": {
+    "keyEvents": [
+      {
+        "id": "event_1",
+        "description": "山本健太郎被发现死在反锁的书房内",
+        "timestamp": "案发当晚",
+        "participants": [
+          "山本健太郎"
+        ],
+        "evidence": [
+          "反锁的门"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_2",
+        "description": "高桥真理子发现书房的隐藏通道",
+        "timestamp": "案发前一周",
+        "participants": [
+          "高桥真理子"
+        ],
+        "evidence": [],
+        "importance": "high"
+      },
+      {
+        "id": "event_3",
+        "description": "高桥真理子潜入书房杀害山本健太郎",
+        "timestamp": "案发当晚",
+        "participants": [
+          "高桥真理子",
+          "山本健太郎"
+        ],
+        "evidence": [
+          "隐藏通道"
+        ],
+        "importance": "high"
+      },
+      {
+        "id": "event_4",
+        "description": "高桥真理子从通道离开，反锁房门制造密室",
+        "timestamp": "案发当晚",
+        "participants": [
+          "高桥真理子"
+        ],
+        "evidence": [
+          "反锁的门"
+        ],
+        "importance": "high"
+      }
+    ],
+    "causalRelations": [
+      {
+        "cause": "event_2",
+        "effect": "event_3",
+        "strength": "strong",
+        "description": "高桥真理子发现隐藏通道后，利用它潜入书房杀害山本健太郎"
+      },
+      {
+        "cause": "event_3",
+        "effect": "event_4",
+        "strength": "strong",
+        "description": "杀害山本健太郎后，高桥真理子利用隐藏通道离开并反锁房门，制造密室假象"
+      }
+    ],
+    "evidenceChain": [
+      {
+        "clueId": "clue1",
+        "connects": [],
+        "significance": "证明案件发生在密室中，增加了案件的复杂性"
+      },
+      {
+        "clueId": "clue4",
+        "connects": [
+          "clue1"
+        ],
+        "significance": "离婚协议揭示了高桥真理子与山本健太郎之间的矛盾，指向她的动机"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "案发前一周",
+        "event": "高桥真理子发现书房的隐藏通道",
+        "location": "山本健太郎的书房",
+        "witnesses": []
+      },
+      {
+        "time": "案发当晚",
+        "event": "高桥真理子潜入书房杀害山本健太郎",
+        "location": "山本健太郎的书房",
+        "witnesses": []
+      },
+      {
+        "time": "案发当晚",
+        "event": "高桥真理子从通道离开，反锁房门制造密室",
+        "location": "山本健太郎的书房",
+        "witnesses": []
+      },
+      {
+        "time": "案发后",
+        "event": "山本健太郎被发现死在反锁的书房内",
+        "location": "山本健太郎的书房",
+        "witnesses": [
+          "佐藤美咲"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "crimeScene": {
+      "success": true,
+      "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e0/20250720/1412f369/afcde393-3939-4b6d-9f85-060403041d4c-1.png?Expires=1753055227&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=HQ8KxlDnxwVos%2Bqp85yznITaGdo%3D",
+      "type": "crime_scene",
+      "description": "案发现场",
+      "prompt": "推理小说案发现场：山本健太郎的私人书房，位于东京市中心的高级公寓内，在一个看似平静的夜晚，著名作家山本健太郎被发现死在自己的书房内，房间从内部反锁，形成完美的密室。死者生前正在撰写一部揭露社会黑暗面的小说，书中涉及多人的秘密。，黑色电影风格，阴暗光线，高对比度，悬疑氛围，电影级画质，专业摄影，高清细节",
+      "usage": {
+        "image_count": 1
+      }
+    },
+    "characters": {
+      "char1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/0a/20250720/1412f369/839732c9-c23f-4319-88ec-2cb3ec35ca9d-1.png?Expires=1753055259&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=IxsaC7qBF6N1632MVnoVkN49No4%3D",
+        "type": "character_portrait",
+        "characterId": "char1",
+        "characterName": "佐藤美咲",
+        "description": "佐藤美咲的肖像",
+        "prompt": "人物肖像：中等身材，黑色长发，常穿着简约的办公室服装，28岁，温柔但有些内向，对山本健太郎有着深厚的感情的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/f9/20250720/1412f369/7dfe1949-4c19-429c-802d-efcf58362a1e-1.png?Expires=1753055290&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=T9nt%2BfimVvdKWFzK36C0VhJAMYw%3D",
+        "type": "character_portrait",
+        "characterId": "char2",
+        "characterName": "田中浩",
+        "description": "田中浩的肖像",
+        "prompt": "人物肖像：高大，西装革履，给人一种精英的感觉，35岁，自信且有些控制欲，对美咲非常关心的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char3": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/24/20250720/1412f369/794ce474-d582-4290-92c5-59273babbd62-1.png?Expires=1753055328&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=awlny5sadiRP%2B4SJA4HP6KcctsY%3D",
+        "type": "character_portrait",
+        "characterId": "char3",
+        "characterName": "小林直人",
+        "description": "小林直人的肖像",
+        "prompt": "人物肖像：瘦高，常穿着休闲装，头发略显凌乱，30岁，冲动且易怒，对美咲念念不忘的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char4": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/cb/20250720/1412f369/7398c941-e3e1-475b-9ec7-b5bfee373795-1.png?Expires=1753055358&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=okpwPEIXjplX%2FBJuGsAuP%2BwM3a0%3D",
+        "type": "character_portrait",
+        "characterId": "char4",
+        "characterName": "高桥真理子",
+        "description": "高桥真理子的肖像",
+        "prompt": "人物肖像：优雅的中年女性，总是穿着职业套装，45岁，冷静且计算，隐藏着深深的怨恨的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "char5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b2/20250720/1412f369/92c4f61a-35f0-4d7c-9614-d98c03be422b-1.png?Expires=1753055388&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7SI%2BJv9um%2FwLzgTfzBQdLOkkBXU%3D",
+        "type": "character_portrait",
+        "characterId": "char5",
+        "characterName": "渡边修",
+        "description": "渡边修的肖像",
+        "prompt": "人物肖像：中等身材，常穿着深色西装，给人一种严肃的感觉，50岁，沉默寡言，内心充满愤怒的表情，黑色电影风格，阴暗光线，高对比度，推理小说角色，专业肖像摄影，高质量，细节丰富",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "clues": {
+      "clue1": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/51/20250720/1412f369/6eb585d8-96f9-4edd-a06f-77a74e612adb-1.png?Expires=1753055416&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=WzIt3ljCoPU%2B28HPN6xT6wRetXk%3D",
+        "type": "clue_image",
+        "clueId": "clue1",
+        "clueName": "反锁的门",
+        "description": "线索：反锁的门",
+        "prompt": "证物特写：书房的门从内部被反锁，没有外力破坏的痕迹，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue2": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8e/20250720/1412f369/34970a20-287c-4f4e-868c-32d552704990-1.png?Expires=1753055447&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0jHvWpOpN57uT7aSuFnevFadJ0A%3D",
+        "type": "clue_image",
+        "clueId": "clue2",
+        "clueName": "未完成的手稿",
+        "description": "线索：未完成的手稿",
+        "prompt": "证物特写：山本健太郎正在撰写的新书手稿，内容涉及多人的秘密，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      },
+      "clue5": {
+        "success": true,
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/a3/20250720/1412f369/ad35ef1f-e881-4dff-8628-3efd4c70a579-1.png?Expires=1753055477&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=jOAX4RSuKBt0uQIpzGClRDKlZjQ%3D",
+        "type": "clue_image",
+        "clueId": "clue5",
+        "clueName": "商业欺诈文件",
+        "description": "线索：商业欺诈文件",
+        "prompt": "证物特写：一份揭露田中浩商业欺诈的文件，推理小说道具，黑色电影风格，阴暗光线，高对比度，清晰细节，专业摄影，证据照片风格",
+        "usage": {
+          "image_count": 1
+        }
+      }
+    },
+    "locations": {}
+  },
+  "gameProgress": {
+    "currentPhase": "investigation",
+    "discoveredClues": [
+      {
+        "id": "clue_1",
+        "name": "小林直人与山本健太郎的关系",
+        "description": "小林直人和山本健太郎之间有着不为人知的复杂关系，可能涉及到过去的某些事件。",
+        "importance": "medium",
+        "discoveredAt": "2025-07-19T23:55:12.211Z",
+        "isNew": false
+      },
+      {
+        "id": "clue1",
+        "name": "小林直人对山本健太郎的敌意",
+        "description": "小林直人提到山本健太郎时表现出明显的敌意，暗示两人之间有不愉快的往事。",
+        "importance": "high",
+        "discoveredAt": "2025-07-19T23:56:17.652Z",
+        "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/97/20250720/1412f369/f414f3c1-a880-4bef-8732-c0e429caf7cf-1.png?Expires=1753055805&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=JukG3QGqJXCJ9OVKCU6%2FTla8kio%3D",
+        "isNew": false
+      }
+    ],
+    "conversationHistory": [
+      {
+        "id": "mdawo1xvkn89g0qoirr",
+        "characterId": "char1",
+        "character": "佐藤美咲",
+        "question": "小林直人你认识吧",
+        "response": "是的，我认识小林直人。他是山本健太郎的...嗯，算是老朋友吧。他们之间有些...复杂的往事。",
+        "timestamp": "2025-07-19T23:55:12.211Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "小林直人与山本健太郎的关系",
+            "description": "小林直人和山本健太郎之间有着不为人知的复杂关系，可能涉及到过去的某些事件。",
+            "importance": "medium",
+            "discoveredAt": "2025-07-19T23:55:12.211Z",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "山本健太郎",
+            "context": "小林直人是山本健太郎的老朋友",
+            "relationship": "前雇主兼秘密恋人",
+            "hint": "山本健太郎与小林直人之间可能存在未解决的冲突或秘密"
+          }
+        ]
+      },
+      {
+        "id": "mdawoi5bwdl1gmufmvi",
+        "characterId": "char1",
+        "character": "佐藤美咲",
+        "question": "他是你前男友对吗",
+        "response": "是的，小林直人确实是我的前男友。那已经是过去的事了，现在我们之间没有什么特别的联系。",
+        "timestamp": "2025-07-19T23:55:33.215Z",
+        "newClues": [
+          {
+            "id": "clue_1",
+            "name": "小林直人与佐藤美咲的关系",
+            "description": "佐藤美咲确认小林直人是她的前男友，但表示现在没有特别联系。",
+            "importance": "medium"
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "小林直人",
+            "context": "被问及与前男友的关系",
+            "relationship": "前男友",
+            "hint": "小林直人与佐藤美咲的过去关系可能影响当前事件"
+          },
+          {
+            "name": "山本健太郎",
+            "context": "提及与小林直人的复杂往事",
+            "relationship": "雇主",
+            "hint": "山本健太郎与小林直人之间可能存在不为人知的矛盾"
+          }
+        ]
+      },
+      {
+        "id": "mdawpgfoi43pp0wfbdg",
+        "characterId": "char3",
+        "character": "小林直人",
+        "question": "你和你前女友什么关系",
+        "response": "美咲和我...那都是过去的事了。我们现在各自有各自的生活。不过，山本健太郎那家伙...算了，不提也罢。",
+        "timestamp": "2025-07-19T23:56:17.652Z",
+        "newClues": [
+          {
+            "id": "clue1",
+            "name": "小林直人对山本健太郎的敌意",
+            "description": "小林直人提到山本健太郎时表现出明显的敌意，暗示两人之间有不愉快的往事。",
+            "importance": "high",
+            "discoveredAt": "2025-07-19T23:56:17.652Z",
+            "imageUrl": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/97/20250720/1412f369/f414f3c1-a880-4bef-8732-c0e429caf7cf-1.png?Expires=1753055805&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=JukG3QGqJXCJ9OVKCU6%2FTla8kio%3D",
+            "isNew": false
+          }
+        ],
+        "mentionedCharacters": [
+          {
+            "name": "山本健太郎",
+            "context": "小林直人在提到前女友美咲时，突然提及山本健太郎，并表现出敌意。",
+            "relationship": "疑似情敌",
+            "hint": "山本健太郎可能与美咲有某种关系，导致小林直人对他怀有敌意。"
+          },
+          {
+            "name": "美咲",
+            "context": "作为小林直人的前女友，被提及在与山本健太郎的关系中。",
+            "relationship": "前女友",
+            "hint": "美咲可能是小林直人和山本健太郎之间矛盾的焦点。"
+          }
+        ]
+      }
+    ],
+    "suspicionLevels": {
+      "char1": 0,
+      "char2": 0,
+      "char3": 5,
+      "char4": 0,
+      "char5": 0
+    },
+    "availableCharacters": [
+      "char1",
+      "char2",
+      "char3"
+    ],
+    "discoveredCharacters": [
+      {
+        "characterId": "char3",
+        "discoveredAt": "2025-07-19T23:55:33.216Z",
+        "discoveredThrough": "被问及与前男友的关系",
+        "mentionedBy": "前男友"
+      }
+    ],
+    "startTime": "2025-07-19T23:51:18.502Z"
+  },
+  "createdAt": "2025-07-19T23:51:18.502Z",
+  "updatedAt": "2025-07-19T23:56:58.171Z"
+}
